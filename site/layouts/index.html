@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="hero">
+    <h1>⚡ Content Empire</h1>
+    <p class="tagline">{{ .Site.Params.tagline }}</p>
+    <p class="hero-desc">High-quality tech articles, hands-on courses, and developer resources crafted by engineers who ship code every day.</p>
+    <div class="hero-cta">
+        <a href="{{ "posts/" | absURL }}" class="btn btn-primary">Read Articles</a>
+        <a href="{{ "courses/" | absURL }}" class="btn btn-secondary">Browse Courses</a>
+    </div>
+</section>
+
+<section class="latest-posts">
+    <h2>Latest Articles</h2>
+    {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+    <article class="post-card">
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <div class="post-meta">
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+            {{ with .Params.author }} · By {{ . }}{{ end }}
+        </div>
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+    </article>
+    {{ end }}
+</section>
+
+<section class="courses-preview">
+    <h2>Featured Course</h2>
+    {{ range first 1 (where .Site.RegularPages "Section" "courses") }}
+    <div class="course-card">
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="btn btn-primary">Start Learning</a>
+    </div>
+    {{ end }}
+</section>
+{{ end }}

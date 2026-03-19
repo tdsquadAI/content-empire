@@ -1,0 +1,138 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Building AI Agent Teams That Actually Ship Code | Content Empire</title><meta name=description content="How to orchestrate multiple AI agents into a productive engineering team that writes, reviews, and deploys real code."><link rel=stylesheet href=https://tamirdresher.github.io/content-empire/css/style.css><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel=stylesheet></head><body><nav class=navbar><div class=container><a href=https://tamirdresher.github.io/content-empire/ class=logo>⚡ Content Empire</a><div class=nav-links><a href=https://tamirdresher.github.io/content-empire/posts/>Articles</a>
+<a href=https://tamirdresher.github.io/content-empire/courses/>Courses</a>
+<a href=https://tamirdresher.github.io/content-empire/pages/about/>About</a></div></div></nav><main class=container><article class=post-single><header class=post-header><h1>Building AI Agent Teams That Actually Ship Code</h1><div class=post-meta><time>July 23, 2025</time>
+· By The Content Empire Team
+· 4 min read</div><div class=post-tags><span class=tag>AI</span> <span class=tag>agents</span> <span class=tag>development</span> <span class=tag>automation</span></div></header><div class=post-content><p>The idea of a single AI coding assistant is already yesterday&rsquo;s news. The real frontier? <strong>Teams of AI agents</strong> that collaborate, review each other&rsquo;s work, and ship production code without constant human babysitting.</p><p>We&rsquo;ve spent the last six months building and refining multi-agent development workflows. Here&rsquo;s what actually works — and what&rsquo;s still hype.</p><h2 id=why-single-agents-hit-a-ceiling>Why Single Agents Hit a Ceiling</h2><p>A single AI agent — whether it&rsquo;s Copilot, Cursor, or Claude — is remarkably useful for autocomplete, explaining code, and generating boilerplate. But ask it to build a complete feature across multiple files, write tests, handle edge cases, and deploy? It struggles.</p><p>The core limitation isn&rsquo;t intelligence. It&rsquo;s <strong>context window management</strong> and <strong>task decomposition</strong>. A single agent trying to hold an entire codebase in its head while making surgical changes is like a developer who refuses to take notes.</p><h2 id=the-multi-agent-architecture-that-works>The Multi-Agent Architecture That Works</h2><p>After extensive experimentation, we&rsquo;ve settled on a team structure that mirrors real engineering orgs:</p><pre tabindex=0><code>┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+│  Architect   │────▶│  Implementer │────▶│  Reviewer    │
+│  (planning)  │     │  (coding)    │     │  (quality)   │
+└─────────────┘     └──────────────┘     └─────────────┘
+       │                    │                    │
+       └────────────────────┴────────────────────┘
+                     Shared Context Store
+</code></pre><h3 id=agent-1-the-architect>Agent 1: The Architect</h3><p>This agent reads the codebase, understands the existing patterns, and produces a structured implementation plan. It never writes code directly.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span>architect_prompt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Analyze the codebase and produce a plan for: </span><span style=color:#e6db74>{task}</span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>Output format:
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>1. Files to modify (with rationale)
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>2. New files to create
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>3. Dependencies to add
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>4. Test strategy
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>5. Rollback plan
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>&#34;&#34;&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=agent-2-the-implementer>Agent 2: The Implementer</h3><p>Takes the architect&rsquo;s plan and writes the actual code. Crucially, it only works on one file at a time, keeping its context window focused.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>for</span> file_task <span style=color:#f92672>in</span> architect_plan<span style=color:#f92672>.</span>files:
+</span></span><span style=display:flex><span>    context <span style=color:#f92672>=</span> load_relevant_context(file_task)
+</span></span><span style=display:flex><span>    result <span style=color:#f92672>=</span> implementer<span style=color:#f92672>.</span>execute(
+</span></span><span style=display:flex><span>        task<span style=color:#f92672>=</span>file_task,
+</span></span><span style=display:flex><span>        context<span style=color:#f92672>=</span>context,
+</span></span><span style=display:flex><span>        style_guide<span style=color:#f92672>=</span>project<span style=color:#f92672>.</span>style_guide
+</span></span><span style=display:flex><span>    )
+</span></span><span style=display:flex><span>    staged_changes<span style=color:#f92672>.</span>append(result)
+</span></span></code></pre></td></tr></table></div></div><h3 id=agent-3-the-reviewer>Agent 3: The Reviewer</h3><p>Reviews every change the implementer produces. This is where the magic happens — the reviewer catches bugs, style violations, and logical errors before any human sees the code.</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span>review <span style=color:#f92672>=</span> reviewer<span style=color:#f92672>.</span>analyze(
+</span></span><span style=display:flex><span>    changes<span style=color:#f92672>=</span>staged_changes,
+</span></span><span style=display:flex><span>    original_plan<span style=color:#f92672>=</span>architect_plan,
+</span></span><span style=display:flex><span>    test_results<span style=color:#f92672>=</span>run_tests(staged_changes)
+</span></span><span style=display:flex><span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> review<span style=color:#f92672>.</span>approval <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;REJECT&#34;</span>:
+</span></span><span style=display:flex><span>    implementer<span style=color:#f92672>.</span>revise(review<span style=color:#f92672>.</span>feedback)
+</span></span></code></pre></td></tr></table></div></div><h2 id=the-secret-sauce-shared-context-store>The Secret Sauce: Shared Context Store</h2><p>The biggest mistake teams make is treating agents as isolated workers. Without shared context, Agent B has no idea what Agent A decided or why.</p><p>We use a simple but effective pattern:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>AgentContext</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>__init__</span>(self):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>decisions <span style=color:#f92672>=</span> []      <span style=color:#75715e># Why choices were made</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>constraints <span style=color:#f92672>=</span> []    <span style=color:#75715e># What must not change</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>file_index <span style=color:#f92672>=</span> {}     <span style=color:#75715e># What each file does</span>
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>test_results <span style=color:#f92672>=</span> []   <span style=color:#75715e># Latest test outcomes</span>
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>add_decision</span>(self, agent, decision, rationale):
+</span></span><span style=display:flex><span>        self<span style=color:#f92672>.</span>decisions<span style=color:#f92672>.</span>append({
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;agent&#34;</span>: agent,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;decision&#34;</span>: decision,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;rationale&#34;</span>: rationale,
+</span></span><span style=display:flex><span>            <span style=color:#e6db74>&#34;timestamp&#34;</span>: datetime<span style=color:#f92672>.</span>now()
+</span></span><span style=display:flex><span>        })
+</span></span></code></pre></td></tr></table></div></div><p>This context store gets passed to every agent at every step. It&rsquo;s the institutional memory that prevents agents from contradicting each other.</p><h2 id=real-results-what-weve-shipped>Real Results: What We&rsquo;ve Shipped</h2><p>Using this architecture, our agent team has successfully:</p><ul><li><strong>Built a complete REST API</strong> (12 endpoints, auth, validation, tests) in 45 minutes</li><li><strong>Migrated a codebase</strong> from Express to Fastify with zero test regression</li><li><strong>Created a React component library</strong> with 20+ components, Storybook stories, and full TypeScript types</li><li><strong>Fixed 34 bugs</strong> from a backlog in a single afternoon — with the reviewer catching 3 additional bugs the original reports missed</li></ul><h2 id=what-doesnt-work-yet>What Doesn&rsquo;t Work Yet</h2><p>Let&rsquo;s be honest about the limitations:</p><ol><li><strong>Complex architectural decisions</strong> — Agents can implement patterns but struggle to choose between competing architectures</li><li><strong>Performance optimization</strong> — They&rsquo;ll write correct code but rarely write <em>fast</em> code without explicit guidance</li><li><strong>Cross-service debugging</strong> — When a bug spans multiple microservices, agents lose the thread</li><li><strong>UI/UX decisions</strong> — Agents can build components but can&rsquo;t judge whether they&rsquo;re actually good</li></ol><h2 id=getting-started-a-minimal-setup>Getting Started: A Minimal Setup</h2><p>You don&rsquo;t need a complex orchestration framework. Start with this:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># agent-team.yaml</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>agents</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>architect</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>model</span>: <span style=color:#ae81ff>claude-sonnet-4</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>role</span>: <span style=color:#e6db74>&#34;Plan changes, never write code&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>context</span>: [<span style=color:#e6db74>&#34;codebase_summary&#34;</span>, <span style=color:#e6db74>&#34;recent_decisions&#34;</span>]
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>implementer</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>model</span>: <span style=color:#ae81ff>claude-sonnet-4</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>role</span>: <span style=color:#e6db74>&#34;Write code following the plan exactly&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>context</span>: [<span style=color:#e6db74>&#34;architect_plan&#34;</span>, <span style=color:#e6db74>&#34;style_guide&#34;</span>, <span style=color:#e6db74>&#34;relevant_files&#34;</span>]
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#f92672>reviewer</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>model</span>: <span style=color:#ae81ff>claude-sonnet-4</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>role</span>: <span style=color:#e6db74>&#34;Review for bugs, style, and correctness&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>context</span>: [<span style=color:#e6db74>&#34;changes&#34;</span>, <span style=color:#e6db74>&#34;test_results&#34;</span>, <span style=color:#e6db74>&#34;architect_plan&#34;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>workflow</span>:
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>architect</span>: <span style=color:#ae81ff>analyze_and_plan</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>implementer</span>: <span style=color:#ae81ff>execute_plan</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>reviewer</span>: <span style=color:#ae81ff>review_changes</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>if_rejected</span>: <span style=color:#ae81ff>goto implementer</span>
+</span></span><span style=display:flex><span>  - <span style=color:#f92672>if_approved</span>: <span style=color:#ae81ff>commit_and_push</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=the-bottom-line>The Bottom Line</h2><p>Multi-agent teams aren&rsquo;t a gimmick — they&rsquo;re the natural evolution of AI-assisted development. The key insight is that <strong>specialization beats generalization</strong>. An agent focused solely on code review will always outperform a general-purpose agent doing review as an afterthought.</p><p>Start small. Build a two-agent setup (implementer + reviewer) and measure the quality difference. You&rsquo;ll never go back to single-agent workflows.</p><hr><p><em>The Content Empire Team builds tools and content for the next generation of AI-powered development. Follow us for more practical guides.</em></p></div><footer class=post-footer><p><strong>Enjoyed this article?</strong> Follow Content Empire for more developer content.</p></footer></article></main><footer class=footer><div class=container><p>&copy; 2026 Content Empire. Build. Publish. Dominate.</p></div></footer></body></html>

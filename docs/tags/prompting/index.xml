@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Prompting on Content Empire</title><link>https://tamirdresher.github.io/content-empire/tags/prompting/</link><description>Recent content in Prompting on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tamirdresher.github.io/content-empire/tags/prompting/index.xml" rel="self" type="application/rss+xml"/><item><title>Module 2: Prompt Engineering for Developers</title><link>https://tamirdresher.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>https://tamirdresher.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</guid><description>&lt;h1 id="module-2-prompt-engineering-for-developers"&gt;Module 2: Prompt Engineering for Developers&lt;/h1&gt;
+&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
+&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Understand why developer prompting differs from general-purpose prompting&lt;/li&gt;
+&lt;li&gt;Master the CIDER framework for writing effective development prompts&lt;/li&gt;
+&lt;li&gt;Have a reusable prompt library for common development tasks&lt;/li&gt;
+&lt;li&gt;Be able to transform vague requests into precise, effective prompts&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="21-why-developer-prompting-is-different"&gt;2.1 Why Developer Prompting Is Different&lt;/h2&gt;
+&lt;p&gt;General prompt engineering advice (&amp;ldquo;be specific&amp;rdquo;, &amp;ldquo;provide examples&amp;rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:&lt;/p&gt;</description></item></channel></rss>

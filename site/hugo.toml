@@ -1,0 +1,39 @@
+baseURL = "https://tamirdresher.github.io/content-empire/"
+languageCode = "en-us"
+title = "Content Empire"
+publishDir = "../docs"
+
+[params]
+  description = "High-quality tech articles, courses, and developer resources"
+  author = "The Content Empire Team"
+  tagline = "Build. Publish. Dominate."
+  brand_color = "#00d4ff"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+
+[menu]
+  [[menu.main]]
+    name = "Articles"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "Courses"
+    url = "/courses/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/pages/about/"
+    weight = 3
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5

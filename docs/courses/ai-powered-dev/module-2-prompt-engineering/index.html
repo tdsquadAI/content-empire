@@ -1,0 +1,194 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Module 2: Prompt Engineering for Developers | Content Empire</title><meta name=description content="Master the art of communicating with AI tools to get better code, faster — using the CIDER framework designed specifically for developers."><link rel=stylesheet href=https://tamirdresher.github.io/content-empire/css/style.css><link rel=preconnect href=https://fonts.googleapis.com><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel=stylesheet></head><body><nav class=navbar><div class=container><a href=https://tamirdresher.github.io/content-empire/ class=logo>⚡ Content Empire</a><div class=nav-links><a href=https://tamirdresher.github.io/content-empire/posts/>Articles</a>
+<a href=https://tamirdresher.github.io/content-empire/courses/>Courses</a>
+<a href=https://tamirdresher.github.io/content-empire/pages/about/>About</a></div></div></nav><main class=container><article class=post-single><header class=post-header><h1>Module 2: Prompt Engineering for Developers</h1><div class=post-meta><time>July 23, 2025</time>
+· By The Content Empire Team
+· 7 min read</div><div class=post-tags><span class=tag>AI</span> <span class=tag>course</span> <span class=tag>prompting</span> <span class=tag>development</span></div></header><div class=post-content><h1 id=module-2-prompt-engineering-for-developers>Module 2: Prompt Engineering for Developers</h1><h2 id=learning-objectives>Learning Objectives</h2><p>By the end of this module, you will:</p><ul><li>Understand why developer prompting differs from general-purpose prompting</li><li>Master the CIDER framework for writing effective development prompts</li><li>Have a reusable prompt library for common development tasks</li><li>Be able to transform vague requests into precise, effective prompts</li></ul><h2 id=21-why-developer-prompting-is-different>2.1 Why Developer Prompting Is Different</h2><p>General prompt engineering advice (&ldquo;be specific&rdquo;, &ldquo;provide examples&rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:</p><ol><li><strong>Code has strict correctness requirements</strong> — Natural language can be vague, but code must compile and produce exact results</li><li><strong>Context is massive</strong> — Your codebase has thousands of files with interconnected dependencies</li><li><strong>Style matters</strong> — Generated code must match your project&rsquo;s patterns, not just be &ldquo;correct&rdquo;</li><li><strong>Iteration is expected</strong> — Unlike writing a marketing email, code generation is almost always iterative</li></ol><h2 id=22-the-cider-framework>2.2 The CIDER Framework</h2><p>We&rsquo;ve developed a framework specifically for developer prompting. Each letter represents a component of an effective prompt:</p><h3 id=c--context><strong>C</strong> — Context</h3><p>Tell the AI about your project, tech stack, and the specific file or module you&rsquo;re working in.</p><p>❌ Bad:</p><pre tabindex=0><code>Write a function to validate email addresses
+</code></pre><p>✅ Good:</p><pre tabindex=0><code>I&#39;m working in a TypeScript Express API project using Zod for validation.
+The project uses a functional style with arrow functions and 
+Result&lt;T, Error&gt; types instead of throwing exceptions.
+
+Write a function to validate email addresses.
+</code></pre><h3 id=i--intent><strong>I</strong> — Intent</h3><p>State clearly what you want to accomplish AND why. The &ldquo;why&rdquo; helps the AI make better design decisions.</p><p>❌ Bad:</p><pre tabindex=0><code>Add caching to the getUser function
+</code></pre><p>✅ Good:</p><pre tabindex=0><code>Add Redis caching to the getUser function to reduce database load.
+We&#39;re seeing 500+ calls/second to this endpoint, and the user data
+changes infrequently (maybe once per day). Cache should invalidate
+when user data is updated.
+</code></pre><h3 id=d--details><strong>D</strong> — Details</h3><p>Specify constraints, edge cases, and requirements that the AI might not assume.</p><pre tabindex=0><code>Details:
+- Cache TTL: 1 hour
+- Cache key format: `user:{userId}`
+- Handle cache misses gracefully (fall back to DB)
+- Handle Redis connection failures (don&#39;t crash, just skip cache)
+- Log cache hits/misses for monitoring
+- Use the existing RedisClient from src/lib/redis.ts
+</code></pre><h3 id=e--examples><strong>E</strong> — Examples</h3><p>Provide examples of existing code patterns in your project. This is the single most powerful technique for getting consistent output.</p><pre tabindex=0><code>Here&#39;s how we handle caching in the getProduct function (follow this pattern):
+
+```typescript
+export const getProduct = async (id: string): Promise&lt;Result&lt;Product&gt;&gt; =&gt; {
+    const cached = await cache.get&lt;Product&gt;(`product:${id}`);
+    if (cached.ok) {
+        logger.debug({ id, source: &#39;cache&#39; }, &#39;Product cache hit&#39;);
+        return Result.ok(cached.value);
+    }
+    
+    const product = await productRepo.findById(id);
+    if (!product.ok) return product;
+    
+    await cache.set(`product:${id}`, product.value, { ttl: 3600 });
+    return product;
+};
+</code></pre><p>Now write getUser following the same pattern.</p><pre tabindex=0><code>
+### **R** — Review Criteria
+
+Tell the AI how you&#39;ll evaluate its output. This acts as a quality checklist.
+</code></pre><p>Review criteria:</p><ul><li>Must pass TypeScript strict mode</li><li>Must handle all error cases without throwing</li><li>Must include JSDoc with @param and @returns</li><li>Must be under 30 lines (excluding comments)</li><li>Must have no external dependencies beyond what&rsquo;s already in package.json</li></ul><pre tabindex=0><code>
+## 2.3 Prompt Templates for Common Tasks
+
+### Template: Bug Fix
+
+```markdown
+## Bug Fix Request
+
+**Context:**
+[Describe the project, relevant files, tech stack]
+
+**Bug Description:**
+[What&#39;s happening vs. what should happen]
+
+**Reproduction Steps:**
+1. [Step 1]
+2. [Step 2]
+
+**Error Output:**
+</code></pre><p>[Paste actual error messages, stack traces]</p><pre tabindex=0><code>
+**Relevant Code:**
+```[language]
+[Paste the suspicious code section]
+</code></pre><p><strong>Constraints:</strong></p><ul><li>Don&rsquo;t change the public API</li><li>Maintain backward compatibility</li><li>Fix must include a regression test</li></ul><pre tabindex=0><code>
+### Template: Code Review
+
+```markdown
+## Code Review Request
+
+**Context:**
+This is a [type of change] in our [project description].
+
+**What changed:**
+[Brief description of the changes]
+
+**Code to review:**
+```[language]
+[Paste the code]
+</code></pre><p><strong>Review focus:</strong></p><ul><li>Correctness: Does this handle all edge cases?</li><li>Performance: Any O(n²) or worse operations?</li><li>Security: Any injection, auth, or data exposure risks?</li><li>Maintainability: Will this be clear in 6 months?</li><li>Testing: What test cases are missing?</li></ul><p><strong>Don&rsquo;t comment on:</strong></p><ul><li>Code style (handled by our linter)</li><li>Naming conventions (unless genuinely confusing)</li></ul><pre tabindex=0><code>
+### Template: Architecture Decision
+
+```markdown
+## Architecture Decision Request
+
+**Context:**
+[Describe the system, current architecture, scale]
+
+**Problem:**
+[What problem needs solving]
+
+**Options I&#39;m considering:**
+1. [Option A] — [brief description]
+2. [Option B] — [brief description]
+3. [Option C] — [brief description]
+
+**Constraints:**
+- Must work with [existing tech]
+- Must handle [scale requirement]
+- Team has experience with [technologies]
+- Budget: [hosting/infra budget]
+
+**What I need:**
+- Pros/cons analysis of each option
+- Recommendation with rationale
+- Migration path from current state
+- Risk assessment
+</code></pre><h3 id=template-refactoring>Template: Refactoring</h3><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">8
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#75715e>## Refactoring Request
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>**Context:**</span>
+</span></span><span style=display:flex><span>[Project, tech stack, the module being refactored]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=font-weight:700>**Current code:**</span>
+</span></span><span style=display:flex><span>```[language]
+</span></span><span style=display:flex><span>[The code that needs refactoring]
+</span></span></code></pre></td></tr></table></div></div><p><strong>Problems with current code:</strong></p><ul><li>[Problem 1]</li><li>[Problem 2]</li></ul><p><strong>Desired outcome:</strong></p><ul><li>[Quality 1: e.g., &ldquo;Separate business logic from HTTP handling&rdquo;]</li><li>[Quality 2: e.g., &ldquo;Make the function testable without mocking HTTP&rdquo;]</li></ul><p><strong>Constraints:</strong></p><ul><li>All existing tests must still pass</li><li>Public API must remain unchanged</li><li>Follow [pattern] used elsewhere in the project</li></ul><pre tabindex=0><code>
+## 2.4 Advanced Techniques
+
+### Chain-of-Thought for Complex Tasks
+
+For complex tasks, ask the AI to think step by step before writing code:
+</code></pre><p>Before writing any code, analyze this task:</p><ol><li>List all the files that need to change</li><li>For each file, describe what changes are needed and why</li><li>Identify potential breaking changes</li><li>Propose a test strategy</li></ol><p>Then implement the changes one file at a time.</p><pre tabindex=0><code>
+### The &#34;Critic&#34; Pattern
+
+After getting a response, ask the AI to critique its own work:
+</code></pre><p>Now review the code you just wrote as if you were a senior
+developer doing a code review. Be harsh. Identify:</p><ul><li>Any bugs or edge cases missed</li><li>Performance concerns</li><li>Security issues</li><li>Readability problems</li></ul><p>Then provide a corrected version addressing all issues found.</p><pre tabindex=0><code>
+### The &#34;Example-Driven&#34; Pattern
+
+Instead of describing what you want, show the AI input/output examples:
+</code></pre><p>I need a function that transforms data. Here are examples:</p><p>Input: { name: &ldquo;john doe&rdquo;, age: 30, role: &ldquo;dev&rdquo; }
+Output: { displayName: &ldquo;John Doe&rdquo;, metadata: { age: 30, role: &ldquo;dev&rdquo; } }</p><p>Input: { name: &ldquo;jane smith&rdquo;, age: 25, role: &ldquo;pm&rdquo;, level: &ldquo;senior&rdquo; }
+Output: { displayName: &ldquo;Jane Smith&rdquo;, metadata: { age: 25, role: &ldquo;pm&rdquo;, level: &ldquo;senior&rdquo; } }</p><p>Write the function. Infer the transformation rules from the examples.</p><pre tabindex=0><code>
+## 2.5 Hands-On Exercise: Prompt Transformation
+
+### Exercise: Transform These Prompts
+
+Take each bad prompt and rewrite it using the CIDER framework:
+
+**Prompt 1 (Bad):**
+</code></pre><p>Write a login function</p><pre tabindex=0><code>
+**Prompt 2 (Bad):**
+</code></pre><p>Fix this code: [paste of 200 lines with no context]</p><pre tabindex=0><code>
+**Prompt 3 (Bad):**
+</code></pre><p>Make this faster</p><pre tabindex=0><code>
+**Prompt 4 (Bad):**
+</code></pre><p>Add tests</p><pre tabindex=0><code>
+### Challenge
+
+For each transformed prompt:
+1. Submit both the original and improved version to your AI tool
+2. Compare the outputs
+3. Measure: lines of code, completeness, correctness, time to first working version
+
+You should see dramatically better results from the CIDER-formatted prompts.
+
+## 2.6 Building Your Prompt Library
+
+Create a `.prompts/` directory in your project:
+</code></pre><p>.prompts/
+├── bug-fix.md
+├── code-review.md
+├── new-feature.md
+├── refactor.md
+├── test-generation.md
+├── architecture-decision.md
+└── README.md (explains how to use each template)</p><pre tabindex=0><code>
+Your team can share and improve these templates over time. They become institutional knowledge for how to effectively work with AI tools.
+
+## Key Takeaways
+
+1. Developer prompting requires more precision than general prompting because code must be correct, not just plausible
+2. The CIDER framework (Context, Intent, Details, Examples, Review criteria) consistently produces better results
+3. Showing examples of your project&#39;s patterns is the single most effective technique
+4. Build a prompt library and share it with your team — good prompts are reusable
+5. Use the &#34;Critic&#34; pattern to get AI to self-improve its output before you review it
+
+## Next Module
+
+In **Module 3: AI-Powered Code Review and Testing**, we&#39;ll build on these prompting skills to create automated code review and test generation pipelines.
+
+---
+
+*Continue to [Module 3: AI-Powered Code Review and Testing →](../module-3-ai-code-review/)*
+</code></pre></div><footer class=post-footer><p><strong>Enjoyed this article?</strong> Follow Content Empire for more developer content.</p></footer></article></main><footer class=footer><div class=container><p>&copy; 2026 Content Empire. Build. Publish. Dominate.</p></div></footer></body></html>

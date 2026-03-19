@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{{ .Site.BaseURL }}" class="logo">⚡ Content Empire</a>
+            <div class="nav-links">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL | absURL }}">{{ .Name }}</a>
+                {{ end }}
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        {{ block "main" . }}{{ end }}
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {{ now.Year }} Content Empire. Build. Publish. Dominate.</p>
+        </div>
+    </footer>
+</body>
+</html>
