@@ -65,3 +65,31 @@ Aggregate, curate, and distribute high-quality tech content across multiple plat
 - Affiliate click-through rates
 - SEO ranking for target keywords
 - Revenue per article
+
+## Session History
+
+### March 19–20, 2026 — Major Build Session
+- **Agents used:** 87 AI agents (squad pattern across all 3 brands)
+- **Files created/modified:** 250+ (across all repos)
+
+**What was built:**
+- 10 unique articles (cross-posted to Medium-ready, Dev.to-ready, and site)
+- 5 Medium-ready articles with SEO tags and canonical URLs
+- 3 Dev.to-ready articles formatted for Dev.to API
+- Hugo static site with 11 posts, ~106 built pages in docs/
+- Complete publishing checklist (PUBLISHING_CHECKLIST.md) with staggered schedule
+- 7-module AI-Powered Development course product listing
+- Brand guide and cross-posting workflow docs
+- Content calendar for 2025
+- Gumroad product listing templates
+- Affiliate configs (config/affiliates.json)
+- Revenue strategy document
+- Social media profile configs
+- GitHub Actions deploy workflow
+
+**Key decisions:**
+- Hugo as static site generator (fast, Go-based)
+- Cross-posting strategy: stagger Medium (days 1,3,5,8,10) and Dev.to (days 2,4,9)
+- Course pricing: Early Bird $9.99, Full $19.99, Team $14.99/seat
+- Content Empire as aggregation/syndication hub for all brands
+- GitHub Pages for initial hosting (plan to migrate to independent domain)
