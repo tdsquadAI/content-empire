@@ -1,4 +1,4 @@
-baseURL = "https://content-empire.netlify.app/"
+baseURL = "https://content-empire-pub.github.io/content-empire/"
 languageCode = "en-us"
 title = "Content Empire"
 publishDir = "../docs"
