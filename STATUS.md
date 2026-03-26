@@ -3,9 +3,9 @@ Last updated: 2026-03-20
 
 ## Brand Identity
 - **Name:** Content Empire
-- **NEVER mention "Tamir Dresher"** — independent brand
+- **NEVER mention "real owner identity"** — independent brand
 - **Hugo static site** deployed to GitHub Pages (docs/ folder)
-- **Base URL:** https://tamirdresher.github.io/content-empire/ (needs independent domain)
+- **Base URL:** https://content-empire.github.io/content-empire/ (needs independent domain)
 - **Funding:** GitHub Sponsors configured (FUNDING.yml)
 
 ## Content Produced

@@ -45,7 +45,7 @@ Topics: AI Agents · DevOps · Kubernetes · Indie Development · Content Strate
 💻 GitHub: https://github.com/content-empire-pub/content-empire
 ```
 
-## GitHub: tamirdresher/content-empire
+## GitHub: content-empire/content-empire
 
 **Repository Description:**
 ```
