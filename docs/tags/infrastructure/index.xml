@@ -1,12 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Infrastructure on Content Empire</title><link>/tags/infrastructure/</link><description>Recent content in Infrastructure on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/infrastructure/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes for Side Projects: When It Makes Sense</title><link>/posts/kubernetes-for-side-projects/</link><pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate><guid>/posts/kubernetes-for-side-projects/</guid><description>&lt;p&gt;Let&amp;rsquo;s get the hot take out of the way: &lt;strong&gt;for 90% of side projects, Kubernetes is massive overkill.&lt;/strong&gt; But that remaining 10%? K8s might be exactly what you need. Let&amp;rsquo;s figure out which camp your project falls into.&lt;/p&gt;
-&lt;h2 id="the-side-project-deployment-spectrum"&gt;The Side Project Deployment Spectrum&lt;/h2&gt;
-&lt;p&gt;Before we talk Kubernetes, let&amp;rsquo;s map out your actual options:&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;Simple ──────────────────────────────────────────── Complex
- │ │
- ▼ ▼
-Static PaaS VPS Containers Kubernetes
-Hosting (Vercel, (DigitalOcean (Docker (K8s, K3s,
-(Pages, Railway) Hetzner) Compose) managed)
-Netlify) 
- $0 $5-20/mo $5-50/mo $5-50/mo $50-300/mo
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each step right adds complexity AND cost. The question isn&amp;rsquo;t &amp;ldquo;can I use Kubernetes?&amp;rdquo; — it&amp;rsquo;s &amp;ldquo;does the complexity pay for itself?&amp;rdquo;&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infrastructure on Content Empire</title>
+    <link>https://tdsquadai.github.io/content-empire/tags/infrastructure/</link>
+    <description>Recent content in Infrastructure on Content Empire</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tdsquadai.github.io/content-empire/tags/infrastructure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kubernetes for Side Projects: When It Makes Sense</title>
+      <link>https://tdsquadai.github.io/content-empire/posts/kubernetes-for-side-projects/</link>
+      <pubDate>Mon, 21 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/posts/kubernetes-for-side-projects/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s get the hot take out of the way: &lt;strong&gt;for 90% of side projects, Kubernetes is massive overkill.&lt;/strong&gt; But that remaining 10%? K8s might be exactly what you need. Let&amp;rsquo;s figure out which camp your project falls into.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-side-project-deployment-spectrum&#34;&gt;The Side Project Deployment Spectrum&lt;/h2&gt;&#xA;&lt;p&gt;Before we talk Kubernetes, let&amp;rsquo;s map out your actual options:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Simple ──────────────────────────────────────────── Complex&#xD;&#xA;  │                                                    │&#xD;&#xA;  ▼                                                    ▼&#xD;&#xA;Static    PaaS        VPS        Containers    Kubernetes&#xD;&#xA;Hosting   (Vercel,    (DigitalOcean  (Docker     (K8s, K3s,&#xD;&#xA;(Pages,   Railway)    Hetzner)       Compose)    managed)&#xD;&#xA;Netlify)                    &#xD;&#xA;  $0       $5-20/mo   $5-50/mo    $5-50/mo     $50-300/mo&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Each step right adds complexity AND cost. The question isn&amp;rsquo;t &amp;ldquo;can I use Kubernetes?&amp;rdquo; — it&amp;rsquo;s &amp;ldquo;does the complexity pay for itself?&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

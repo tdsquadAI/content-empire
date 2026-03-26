@@ -1,4 +1,4 @@
-baseURL = "https://content-empire-pub.github.io/content-empire/"
+baseURL = "https://tdsquadai.github.io/content-empire/"
 languageCode = "en-us"
 title = "Content Empire"
 publishDir = "../docs"
@@ -37,3 +37,4 @@ publishDir = "../docs"
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
+

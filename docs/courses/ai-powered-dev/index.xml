@@ -1,52 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI-Powered Development: From Copilot to Full Agent Teams on Content Empire</title><link>/courses/ai-powered-dev/</link><description>Recent content in AI-Powered Development: From Copilot to Full Agent Teams on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="/courses/ai-powered-dev/index.xml" rel="self" type="application/rss+xml"/><item><title>Module 1: The AI Development Landscape</title><link>/courses/ai-powered-dev/module-1-landscape/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-1-landscape/</guid><description>&lt;h1 id="module-1-the-ai-development-landscape"&gt;Module 1: The AI Development Landscape&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand the spectrum of AI development tools available in 2026&lt;/li&gt;
-&lt;li&gt;Know how to evaluate and choose the right tools for your workflow&lt;/li&gt;
-&lt;li&gt;Have a fully configured AI-enhanced development environment&lt;/li&gt;
-&lt;li&gt;Be able to articulate the difference between code completion, chat assistants, and autonomous agents&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="11-the-evolution-of-ai-in-development"&gt;1.1 The Evolution of AI in Development&lt;/h2&gt;
-&lt;p&gt;AI-assisted development has evolved through three distinct waves:&lt;/p&gt;</description></item><item><title>Module 2: Prompt Engineering for Developers</title><link>/courses/ai-powered-dev/module-2-prompt-engineering/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-2-prompt-engineering/</guid><description>&lt;h1 id="module-2-prompt-engineering-for-developers"&gt;Module 2: Prompt Engineering for Developers&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand why developer prompting differs from general-purpose prompting&lt;/li&gt;
-&lt;li&gt;Master the CIDER framework for writing effective development prompts&lt;/li&gt;
-&lt;li&gt;Have a reusable prompt library for common development tasks&lt;/li&gt;
-&lt;li&gt;Be able to transform vague requests into precise, effective prompts&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="21-why-developer-prompting-is-different"&gt;2.1 Why Developer Prompting Is Different&lt;/h2&gt;
-&lt;p&gt;General prompt engineering advice (&amp;ldquo;be specific&amp;rdquo;, &amp;ldquo;provide examples&amp;rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:&lt;/p&gt;</description></item><item><title>Module 3: AI-Powered Code Review and Testing</title><link>/courses/ai-powered-dev/module-3-code-review/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-3-code-review/</guid><description>&lt;h1 id="module-3-ai-powered-code-review-and-testing"&gt;Module 3: AI-Powered Code Review and Testing&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand how AI can systematically review code changes&lt;/li&gt;
-&lt;li&gt;Build an automated PR review bot using AI&lt;/li&gt;
-&lt;li&gt;Generate comprehensive test suites with AI assistance&lt;/li&gt;
-&lt;li&gt;Use AI for security vulnerability detection&lt;/li&gt;
-&lt;li&gt;Know the limits of AI code review and when human review is still essential&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="31-the-case-for-ai-code-review"&gt;3.1 The Case for AI Code Review&lt;/h2&gt;
-&lt;p&gt;Manual code review is one of the biggest bottlenecks in software development:&lt;/p&gt;</description></item><item><title>Module 4: Building Your First AI Agent</title><link>/courses/ai-powered-dev/module-4-first-agent/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-4-first-agent/</guid><description>&lt;h1 id="module-4-building-your-first-ai-agent"&gt;Module 4: Building Your First AI Agent&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand the core agent loop and how it differs from chat assistants&lt;/li&gt;
-&lt;li&gt;Implement tool use and function calling for code manipulation&lt;/li&gt;
-&lt;li&gt;Build a complete bug-fixing agent from scratch&lt;/li&gt;
-&lt;li&gt;Handle agent errors, loops, and safety guardrails&lt;/li&gt;
-&lt;li&gt;Deploy your agent as a command-line tool&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="41-what-makes-an-agent-different-from-a-chat"&gt;4.1 What Makes an Agent Different from a Chat?&lt;/h2&gt;
-&lt;p&gt;The distinction is critical:&lt;/p&gt;</description></item><item><title>AI-Powered Development Course</title><link>/courses/ai-powered-dev/landing/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/landing/</guid><description>&lt;div style="text-align: center; padding: 3rem 0;"&gt;
- &lt;h1 style="font-size: 2.5rem; color: #0a0a2e;"&gt;🤖 AI-Powered Development&lt;/h1&gt;
- &lt;p style="font-size: 1.4rem; color: #ff006e; font-weight: 600;"&gt;From Copilot to Full Agent Teams&lt;/p&gt;
- &lt;p style="font-size: 1.1rem; color: #6b6b80; max-width: 600px; margin: 1rem auto;"&gt;
- Master the full spectrum of AI development tools — from basic code completion to building autonomous agent teams that ship production code.
- &lt;/p&gt;
-&lt;/div&gt;
-&lt;hr&gt;
-&lt;h2 id="what-youll-learn"&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;
-&lt;p&gt;This course takes you from &amp;ldquo;AI can autocomplete my code&amp;rdquo; to &amp;ldquo;AI teams build features while I review the output.&amp;rdquo; Each module builds on the previous one with hands-on exercises and real code.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI-Powered Development: From Copilot to Full Agent Teams on Content Empire</title>
+    <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/</link>
+    <description>Recent content in AI-Powered Development: From Copilot to Full Agent Teams on Content Empire</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Module 1: The AI Development Landscape</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-1-landscape/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-1-landscape/</guid>
+      <description>&lt;h1 id=&#34;module-1-the-ai-development-landscape&#34;&gt;Module 1: The AI Development Landscape&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand the spectrum of AI development tools available in 2026&lt;/li&gt;&#xA;&lt;li&gt;Know how to evaluate and choose the right tools for your workflow&lt;/li&gt;&#xA;&lt;li&gt;Have a fully configured AI-enhanced development environment&lt;/li&gt;&#xA;&lt;li&gt;Be able to articulate the difference between code completion, chat assistants, and autonomous agents&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;11-the-evolution-of-ai-in-development&#34;&gt;1.1 The Evolution of AI in Development&lt;/h2&gt;&#xA;&lt;p&gt;AI-assisted development has evolved through three distinct waves:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Module 2: Prompt Engineering for Developers</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</guid>
+      <description>&lt;h1 id=&#34;module-2-prompt-engineering-for-developers&#34;&gt;Module 2: Prompt Engineering for Developers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand why developer prompting differs from general-purpose prompting&lt;/li&gt;&#xA;&lt;li&gt;Master the CIDER framework for writing effective development prompts&lt;/li&gt;&#xA;&lt;li&gt;Have a reusable prompt library for common development tasks&lt;/li&gt;&#xA;&lt;li&gt;Be able to transform vague requests into precise, effective prompts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;21-why-developer-prompting-is-different&#34;&gt;2.1 Why Developer Prompting Is Different&lt;/h2&gt;&#xA;&lt;p&gt;General prompt engineering advice (&amp;ldquo;be specific&amp;rdquo;, &amp;ldquo;provide examples&amp;rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Module 3: AI-Powered Code Review and Testing</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-3-code-review/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-3-code-review/</guid>
+      <description>&lt;h1 id=&#34;module-3-ai-powered-code-review-and-testing&#34;&gt;Module 3: AI-Powered Code Review and Testing&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand how AI can systematically review code changes&lt;/li&gt;&#xA;&lt;li&gt;Build an automated PR review bot using AI&lt;/li&gt;&#xA;&lt;li&gt;Generate comprehensive test suites with AI assistance&lt;/li&gt;&#xA;&lt;li&gt;Use AI for security vulnerability detection&lt;/li&gt;&#xA;&lt;li&gt;Know the limits of AI code review and when human review is still essential&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;31-the-case-for-ai-code-review&#34;&gt;3.1 The Case for AI Code Review&lt;/h2&gt;&#xA;&lt;p&gt;Manual code review is one of the biggest bottlenecks in software development:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Module 4: Building Your First AI Agent</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-4-first-agent/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-4-first-agent/</guid>
+      <description>&lt;h1 id=&#34;module-4-building-your-first-ai-agent&#34;&gt;Module 4: Building Your First AI Agent&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand the core agent loop and how it differs from chat assistants&lt;/li&gt;&#xA;&lt;li&gt;Implement tool use and function calling for code manipulation&lt;/li&gt;&#xA;&lt;li&gt;Build a complete bug-fixing agent from scratch&lt;/li&gt;&#xA;&lt;li&gt;Handle agent errors, loops, and safety guardrails&lt;/li&gt;&#xA;&lt;li&gt;Deploy your agent as a command-line tool&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;41-what-makes-an-agent-different-from-a-chat&#34;&gt;4.1 What Makes an Agent Different from a Chat?&lt;/h2&gt;&#xA;&lt;p&gt;The distinction is critical:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI-Powered Development Course</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/landing/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/landing/</guid>
+      <description>&lt;div style=&#34;text-align: center; padding: 3rem 0;&#34;&gt;&#xD;&#xA;    &lt;h1 style=&#34;font-size: 2.5rem; color: #0a0a2e;&#34;&gt;🤖 AI-Powered Development&lt;/h1&gt;&#xD;&#xA;    &lt;p style=&#34;font-size: 1.4rem; color: #ff006e; font-weight: 600;&#34;&gt;From Copilot to Full Agent Teams&lt;/p&gt;&#xD;&#xA;    &lt;p style=&#34;font-size: 1.1rem; color: #6b6b80; max-width: 600px; margin: 1rem auto;&#34;&gt;&#xD;&#xA;        Master the full spectrum of AI development tools — from basic code completion to building autonomous agent teams that ship production code.&#xD;&#xA;    &lt;/p&gt;&#xD;&#xA;&lt;/div&gt;&#xD;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;what-youll-learn&#34;&gt;What You&amp;rsquo;ll Learn&lt;/h2&gt;&#xA;&lt;p&gt;This course takes you from &amp;ldquo;AI can autocomplete my code&amp;rdquo; to &amp;ldquo;AI teams build features while I review the output.&amp;rdquo; Each module builds on the previous one with hands-on exercises and real code.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

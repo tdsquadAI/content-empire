@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pages on Content Empire</title><link>/pages/</link><description>Recent content in Pages on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 19 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="/pages/index.xml" rel="self" type="application/rss+xml"/><item><title>About Content Empire</title><link>/pages/about/</link><pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate><guid>/pages/about/</guid><description>&lt;h2 id="who-we-are"&gt;Who We Are&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Content Empire&lt;/strong&gt; is a tech content publishing platform created by developers, for developers. We produce high-quality articles, courses, and resources that help engineers build better software, advance their careers, and create their own content empires.&lt;/p&gt;
-&lt;h2 id="our-mission"&gt;Our Mission&lt;/h2&gt;
-&lt;p&gt;We believe every developer has valuable knowledge worth sharing. Our mission is to demonstrate that creating technical content isn&amp;rsquo;t just about building an audience — it&amp;rsquo;s about becoming a better engineer, building compounding assets, and contributing to the global developer community.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Content Empire</title>
+    <link>https://tdsquadai.github.io/content-empire/pages/</link>
+    <description>Recent content in Pages on Content Empire</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tdsquadai.github.io/content-empire/pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About Content Empire</title>
+      <link>https://tdsquadai.github.io/content-empire/pages/about/</link>
+      <pubDate>Sat, 19 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/pages/about/</guid>
+      <description>&lt;h2 id=&#34;who-we-are&#34;&gt;Who We Are&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Content Empire&lt;/strong&gt; is a tech content publishing platform created by developers, for developers. We produce high-quality articles, courses, and resources that help engineers build better software, advance their careers, and create their own content empires.&lt;/p&gt;&#xA;&lt;h2 id=&#34;our-mission&#34;&gt;Our Mission&lt;/h2&gt;&#xA;&lt;p&gt;We believe every developer has valuable knowledge worth sharing. Our mission is to demonstrate that creating technical content isn&amp;rsquo;t just about building an audience — it&amp;rsquo;s about becoming a better engineer, building compounding assets, and contributing to the global developer community.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

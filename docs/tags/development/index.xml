@@ -1,85 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Development on Content Empire</title><link>/tags/development/</link><description>Recent content in Development on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/development/index.xml" rel="self" type="application/rss+xml"/><item><title>Module 2: Prompt Engineering for Developers</title><link>/courses/ai-powered-dev/module-2-prompt-engineering/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-2-prompt-engineering/</guid><description>&lt;h1 id="module-2-prompt-engineering-for-developers"&gt;Module 2: Prompt Engineering for Developers&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand why developer prompting differs from general-purpose prompting&lt;/li&gt;
-&lt;li&gt;Master the CIDER framework for writing effective development prompts&lt;/li&gt;
-&lt;li&gt;Have a reusable prompt library for common development tasks&lt;/li&gt;
-&lt;li&gt;Be able to transform vague requests into precise, effective prompts&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="21-why-developer-prompting-is-different"&gt;2.1 Why Developer Prompting Is Different&lt;/h2&gt;
-&lt;p&gt;General prompt engineering advice (&amp;ldquo;be specific&amp;rdquo;, &amp;ldquo;provide examples&amp;rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:&lt;/p&gt;</description></item><item><title>Module 4: Building Your First AI Agent</title><link>/courses/ai-powered-dev/module-4-first-agent/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/module-4-first-agent/</guid><description>&lt;h1 id="module-4-building-your-first-ai-agent"&gt;Module 4: Building Your First AI Agent&lt;/h1&gt;
-&lt;h2 id="learning-objectives"&gt;Learning Objectives&lt;/h2&gt;
-&lt;p&gt;By the end of this module, you will:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Understand the core agent loop and how it differs from chat assistants&lt;/li&gt;
-&lt;li&gt;Implement tool use and function calling for code manipulation&lt;/li&gt;
-&lt;li&gt;Build a complete bug-fixing agent from scratch&lt;/li&gt;
-&lt;li&gt;Handle agent errors, loops, and safety guardrails&lt;/li&gt;
-&lt;li&gt;Deploy your agent as a command-line tool&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="41-what-makes-an-agent-different-from-a-chat"&gt;4.1 What Makes an Agent Different from a Chat?&lt;/h2&gt;
-&lt;p&gt;The distinction is critical:&lt;/p&gt;</description></item><item><title>AI-Powered Development: From Copilot to Full Agent Teams</title><link>/courses/ai-powered-dev/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/courses/ai-powered-dev/</guid><description>&lt;h1 id="ai-powered-development-from-copilot-to-full-agent-teams"&gt;AI-Powered Development: From Copilot to Full Agent Teams&lt;/h1&gt;
-&lt;p&gt;A hands-on mini-course that takes you from basic AI code completion to building and managing autonomous AI agent teams that ship production code.&lt;/p&gt;
-&lt;h2 id="who-this-course-is-for"&gt;Who This Course Is For&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Developers who use Copilot/AI assistants but want to go deeper&lt;/li&gt;
-&lt;li&gt;Tech leads evaluating AI tooling for their teams&lt;/li&gt;
-&lt;li&gt;Anyone curious about the future of AI-assisted software engineering&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="course-outline"&gt;Course Outline&lt;/h2&gt;
-&lt;h3 id="module-1-the-ai-development-landscape-lesson-available"&gt;Module 1: The AI Development Landscape (Lesson Available)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Current state of AI coding tools in 2026&lt;/li&gt;
-&lt;li&gt;Understanding the capability spectrum: autocomplete → agents&lt;/li&gt;
-&lt;li&gt;Setting up your AI-enhanced development environment&lt;/li&gt;
-&lt;li&gt;Hands-on: Configure and compare 3 AI assistants&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-2-prompt-engineering-for-developers-lesson-available"&gt;Module 2: Prompt Engineering for Developers (Lesson Available)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Why developer prompting is different from general AI prompting&lt;/li&gt;
-&lt;li&gt;The CIDER framework: Context, Intent, Details, Examples, Review&lt;/li&gt;
-&lt;li&gt;Prompting patterns for code generation, debugging, and refactoring&lt;/li&gt;
-&lt;li&gt;Hands-on: Transform vague prompts into precise, effective ones&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-3-ai-powered-code-review-and-testing"&gt;Module 3: AI-Powered Code Review and Testing&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Using AI to review pull requests systematically&lt;/li&gt;
-&lt;li&gt;Generating comprehensive test suites with AI&lt;/li&gt;
-&lt;li&gt;Finding security vulnerabilities with AI-assisted analysis&lt;/li&gt;
-&lt;li&gt;Hands-on: Build an automated PR review bot&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-4-building-your-first-ai-agent"&gt;Module 4: Building Your First AI Agent&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;What makes an &amp;ldquo;agent&amp;rdquo; different from a &amp;ldquo;chatbot&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;The agent loop: Observe → Think → Act → Evaluate&lt;/li&gt;
-&lt;li&gt;Tool use and function calling for code manipulation&lt;/li&gt;
-&lt;li&gt;Hands-on: Build a bug-fixing agent from scratch&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-5-multi-agent-orchestration"&gt;Module 5: Multi-Agent Orchestration&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Why single agents hit a ceiling&lt;/li&gt;
-&lt;li&gt;The Architect-Implementer-Reviewer pattern&lt;/li&gt;
-&lt;li&gt;Shared context stores and agent communication&lt;/li&gt;
-&lt;li&gt;Hands-on: Set up a 3-agent development pipeline&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-6-production-agent-workflows"&gt;Module 6: Production Agent Workflows&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Error handling and recovery strategies&lt;/li&gt;
-&lt;li&gt;Human-in-the-loop checkpoints&lt;/li&gt;
-&lt;li&gt;Monitoring and observability for agent systems&lt;/li&gt;
-&lt;li&gt;Cost management and model selection&lt;/li&gt;
-&lt;li&gt;Hands-on: Deploy an agent team to your CI/CD pipeline&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id="module-7-the-future-of-ai-development"&gt;Module 7: The Future of AI Development&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Emerging patterns: self-improving agents, specification-driven development&lt;/li&gt;
-&lt;li&gt;Ethical considerations and responsible AI usage&lt;/li&gt;
-&lt;li&gt;Building your career in the age of AI&lt;/li&gt;
-&lt;li&gt;Creating your own AI-powered content and products&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="what-youll-build"&gt;What You&amp;rsquo;ll Build&lt;/h2&gt;
-&lt;p&gt;By the end of this course, you&amp;rsquo;ll have:&lt;/p&gt;</description></item><item><title>Building AI Agent Teams That Actually Ship Code</title><link>/posts/building-ai-agent-teams/</link><pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate><guid>/posts/building-ai-agent-teams/</guid><description>&lt;p&gt;The idea of a single AI coding assistant is already yesterday&amp;rsquo;s news. The real frontier? &lt;strong&gt;Teams of AI agents&lt;/strong&gt; that collaborate, review each other&amp;rsquo;s work, and ship production code without constant human babysitting.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ve spent the last six months building and refining multi-agent development workflows. Here&amp;rsquo;s what actually works — and what&amp;rsquo;s still hype.&lt;/p&gt;
-&lt;h2 id="why-single-agents-hit-a-ceiling"&gt;Why Single Agents Hit a Ceiling&lt;/h2&gt;
-&lt;p&gt;A single AI agent — whether it&amp;rsquo;s Copilot, Cursor, or Claude — is remarkably useful for autocomplete, explaining code, and generating boilerplate. But ask it to build a complete feature across multiple files, write tests, handle edge cases, and deploy? It struggles.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Development on Content Empire</title>
+    <link>https://tdsquadai.github.io/content-empire/tags/development/</link>
+    <description>Recent content in Development on Content Empire</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 23 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tdsquadai.github.io/content-empire/tags/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Module 2: Prompt Engineering for Developers</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-2-prompt-engineering/</guid>
+      <description>&lt;h1 id=&#34;module-2-prompt-engineering-for-developers&#34;&gt;Module 2: Prompt Engineering for Developers&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand why developer prompting differs from general-purpose prompting&lt;/li&gt;&#xA;&lt;li&gt;Master the CIDER framework for writing effective development prompts&lt;/li&gt;&#xA;&lt;li&gt;Have a reusable prompt library for common development tasks&lt;/li&gt;&#xA;&lt;li&gt;Be able to transform vague requests into precise, effective prompts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;21-why-developer-prompting-is-different&#34;&gt;2.1 Why Developer Prompting Is Different&lt;/h2&gt;&#xA;&lt;p&gt;General prompt engineering advice (&amp;ldquo;be specific&amp;rdquo;, &amp;ldquo;provide examples&amp;rdquo;) is necessary but not sufficient for development work. Developer prompting has unique challenges:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Module 4: Building Your First AI Agent</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-4-first-agent/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/module-4-first-agent/</guid>
+      <description>&lt;h1 id=&#34;module-4-building-your-first-ai-agent&#34;&gt;Module 4: Building Your First AI Agent&lt;/h1&gt;&#xA;&lt;h2 id=&#34;learning-objectives&#34;&gt;Learning Objectives&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this module, you will:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Understand the core agent loop and how it differs from chat assistants&lt;/li&gt;&#xA;&lt;li&gt;Implement tool use and function calling for code manipulation&lt;/li&gt;&#xA;&lt;li&gt;Build a complete bug-fixing agent from scratch&lt;/li&gt;&#xA;&lt;li&gt;Handle agent errors, loops, and safety guardrails&lt;/li&gt;&#xA;&lt;li&gt;Deploy your agent as a command-line tool&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;41-what-makes-an-agent-different-from-a-chat&#34;&gt;4.1 What Makes an Agent Different from a Chat?&lt;/h2&gt;&#xA;&lt;p&gt;The distinction is critical:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI-Powered Development: From Copilot to Full Agent Teams</title>
+      <link>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/courses/ai-powered-dev/</guid>
+      <description>&lt;h1 id=&#34;ai-powered-development-from-copilot-to-full-agent-teams&#34;&gt;AI-Powered Development: From Copilot to Full Agent Teams&lt;/h1&gt;&#xA;&lt;p&gt;A hands-on mini-course that takes you from basic AI code completion to building and managing autonomous AI agent teams that ship production code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;who-this-course-is-for&#34;&gt;Who This Course Is For&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Developers who use Copilot/AI assistants but want to go deeper&lt;/li&gt;&#xA;&lt;li&gt;Tech leads evaluating AI tooling for their teams&lt;/li&gt;&#xA;&lt;li&gt;Anyone curious about the future of AI-assisted software engineering&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;course-outline&#34;&gt;Course Outline&lt;/h2&gt;&#xA;&lt;h3 id=&#34;module-1-the-ai-development-landscape-lesson-available&#34;&gt;Module 1: The AI Development Landscape (Lesson Available)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Current state of AI coding tools in 2026&lt;/li&gt;&#xA;&lt;li&gt;Understanding the capability spectrum: autocomplete → agents&lt;/li&gt;&#xA;&lt;li&gt;Setting up your AI-enhanced development environment&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Configure and compare 3 AI assistants&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-2-prompt-engineering-for-developers-lesson-available&#34;&gt;Module 2: Prompt Engineering for Developers (Lesson Available)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why developer prompting is different from general AI prompting&lt;/li&gt;&#xA;&lt;li&gt;The CIDER framework: Context, Intent, Details, Examples, Review&lt;/li&gt;&#xA;&lt;li&gt;Prompting patterns for code generation, debugging, and refactoring&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Transform vague prompts into precise, effective ones&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-3-ai-powered-code-review-and-testing&#34;&gt;Module 3: AI-Powered Code Review and Testing&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Using AI to review pull requests systematically&lt;/li&gt;&#xA;&lt;li&gt;Generating comprehensive test suites with AI&lt;/li&gt;&#xA;&lt;li&gt;Finding security vulnerabilities with AI-assisted analysis&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Build an automated PR review bot&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-4-building-your-first-ai-agent&#34;&gt;Module 4: Building Your First AI Agent&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;What makes an &amp;ldquo;agent&amp;rdquo; different from a &amp;ldquo;chatbot&amp;rdquo;&lt;/li&gt;&#xA;&lt;li&gt;The agent loop: Observe → Think → Act → Evaluate&lt;/li&gt;&#xA;&lt;li&gt;Tool use and function calling for code manipulation&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Build a bug-fixing agent from scratch&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-5-multi-agent-orchestration&#34;&gt;Module 5: Multi-Agent Orchestration&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Why single agents hit a ceiling&lt;/li&gt;&#xA;&lt;li&gt;The Architect-Implementer-Reviewer pattern&lt;/li&gt;&#xA;&lt;li&gt;Shared context stores and agent communication&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Set up a 3-agent development pipeline&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-6-production-agent-workflows&#34;&gt;Module 6: Production Agent Workflows&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Error handling and recovery strategies&lt;/li&gt;&#xA;&lt;li&gt;Human-in-the-loop checkpoints&lt;/li&gt;&#xA;&lt;li&gt;Monitoring and observability for agent systems&lt;/li&gt;&#xA;&lt;li&gt;Cost management and model selection&lt;/li&gt;&#xA;&lt;li&gt;Hands-on: Deploy an agent team to your CI/CD pipeline&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;module-7-the-future-of-ai-development&#34;&gt;Module 7: The Future of AI Development&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Emerging patterns: self-improving agents, specification-driven development&lt;/li&gt;&#xA;&lt;li&gt;Ethical considerations and responsible AI usage&lt;/li&gt;&#xA;&lt;li&gt;Building your career in the age of AI&lt;/li&gt;&#xA;&lt;li&gt;Creating your own AI-powered content and products&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;what-youll-build&#34;&gt;What You&amp;rsquo;ll Build&lt;/h2&gt;&#xA;&lt;p&gt;By the end of this course, you&amp;rsquo;ll have:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building AI Agent Teams That Actually Ship Code</title>
+      <link>https://tdsquadai.github.io/content-empire/posts/building-ai-agent-teams/</link>
+      <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://tdsquadai.github.io/content-empire/posts/building-ai-agent-teams/</guid>
+      <description>&lt;p&gt;The idea of a single AI coding assistant is already yesterday&amp;rsquo;s news. The real frontier? &lt;strong&gt;Teams of AI agents&lt;/strong&gt; that collaborate, review each other&amp;rsquo;s work, and ship production code without constant human babysitting.&lt;/p&gt;&#xA;&lt;p&gt;We&amp;rsquo;ve spent the last six months building and refining multi-agent development workflows. Here&amp;rsquo;s what actually works — and what&amp;rsquo;s still hype.&lt;/p&gt;&#xA;&lt;h2 id=&#34;why-single-agents-hit-a-ceiling&#34;&gt;Why Single Agents Hit a Ceiling&lt;/h2&gt;&#xA;&lt;p&gt;A single AI agent — whether it&amp;rsquo;s Copilot, Cursor, or Claude — is remarkably useful for autocomplete, explaining code, and generating boilerplate. But ask it to build a complete feature across multiple files, write tests, handle edge cases, and deploy? It struggles.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

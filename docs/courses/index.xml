@@ -1,1 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Courses on Content Empire</title><link>/courses/</link><description>Recent content in Courses on Content Empire</description><generator>Hugo</generator><language>en-us</language><lastBuildDate/><atom:link href="/courses/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Courses on Content Empire</title>
+    <link>https://tdsquadai.github.io/content-empire/courses/</link>
+    <description>Recent content in Courses on Content Empire</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="https://tdsquadai.github.io/content-empire/courses/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
