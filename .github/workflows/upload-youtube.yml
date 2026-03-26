@@ -1,0 +1,73 @@
+name: Upload Video to YouTube
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_path:
+        description: 'Path to video file in repo (e.g. videos/course-preview.mp4)'
+        required: true
+      title:
+        description: 'YouTube video title'
+        required: true
+      description:
+        description: 'YouTube video description'
+        required: false
+        default: ''
+      playlist_id:
+        description: 'YouTube playlist ID to add video to (optional)'
+        required: false
+        default: ''
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install google-api-python-client google-auth-oauthlib google-auth-httplib2
+
+      - name: Check YouTube credentials
+        id: check_creds
+        run: |
+          if [ -z "$YOUTUBE_REFRESH_TOKEN" ]; then
+            echo "::warning::YOUTUBE_REFRESH_TOKEN not set. YouTube upload skipped. Set YOUTUBE_REFRESH_TOKEN, YOUTUBE_CLIENT_ID, YOUTUBE_CLIENT_SECRET as repository secrets."
+            echo "skip_upload=true" >> $GITHUB_OUTPUT
+          fi
+        env:
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+
+      - name: Upload to YouTube
+        if: steps.check_creds.outputs.skip_upload != 'true'
+        continue-on-error: false
+        env:
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+        run: |
+          python scripts/upload-youtube.py \
+            --video "${{ inputs.video_path }}" \
+            --title "${{ inputs.title }}" \
+            --description "${{ inputs.description }}" \
+            --playlist-id "${{ inputs.playlist_id }}"
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ "${{ steps.check_creds.outputs.skip_upload }}" = "true" ]; then
+            echo "## ⚠️ YouTube Upload Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "Credentials not configured. Set **YOUTUBE_REFRESH_TOKEN**, **YOUTUBE_CLIENT_ID**, **YOUTUBE_CLIENT_SECRET** as repository secrets." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ job.status }}" = "success" ]; then
+            echo "## ✅ YouTube Upload Succeeded" >> $GITHUB_STEP_SUMMARY
+            echo "**Video:** ${{ inputs.title }}" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "## ❌ YouTube Upload Failed" >> $GITHUB_STEP_SUMMARY
+            echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY
+          fi
