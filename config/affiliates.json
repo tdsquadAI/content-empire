@@ -1,26 +1,31 @@
 {
   "affiliates": {
     "digitalocean": {
-      "referral_url": "https://m.do.co/c/PLACEHOLDER",
+      "status": "pending_signup",
       "description": "DigitalOcean $200 credit referral",
-      "status": "pending_signup"
+      "referral_url": "https://m.do.co/c/PLACEHOLDER"
     },
     "aws": {
-      "program": "AWS Affiliate Program",
+      "earnings_30d": 1.25,
+      "affiliate_link_format": "https://www.amazon.com/dp/{ASIN}?tag=tamirdresher2-20",
+      "status": "active",
       "signup_url": "https://affiliate-program.amazon.com/",
-      "status": "pending_signup"
+      "store_id": "tamirdresher2-20",
+      "note": "Payment info needs to be submitted in dashboard",
+      "program": "Amazon Associates",
+      "tracking_id": "tamirdresher2-20"
     },
     "cloudflare": {
       "referral_url": "https://dash.cloudflare.com/sign-up?ref=PLACEHOLDER",
       "status": "pending_signup"
     }
   },
-  "adsense": {
-    "publisher_id": "ca-pub-PLACEHOLDER",
-    "status": "pending_signup"
-  },
   "gumroad": {
     "store_url": "https://tdsquad.gumroad.com",
     "status": "active"
+  },
+  "adsense": {
+    "status": "pending_signup",
+    "publisher_id": "ca-pub-PLACEHOLDER"
   }
 }
