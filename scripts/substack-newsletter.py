@@ -139,7 +139,7 @@ def substack_post(pub_url: str, cookie: str, payload: dict) -> dict:
             "Cookie": f"substack.sid={cookie}",
             "Accept": "application/json, text/plain, */*",
             "Accept-Language": "en-US,en;q=0.9",
-            "Accept-Encoding": "gzip, deflate, br",
+            # Note: no Accept-Encoding — keeps response uncompressed for error inspection
             "User-Agent": (
                 "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
                 "(KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
@@ -155,12 +155,12 @@ def substack_post(pub_url: str, cookie: str, payload: dict) -> dict:
             return json.loads(resp.read())
     except urllib.error.HTTPError as e:
         body_text = e.read().decode(errors="replace")
-        # Cloudflare bot-protection returns 403 with HTML "Just a moment..."
-        is_cloudflare = "challenge-platform" in body_text or "Just a moment" in body_text
-        if is_cloudflare:
+        if e.code == 403:
+            # 403 from CI runners = Cloudflare bot-protection (GitHub Actions IPs are blocked)
+            # or expired session cookie — either way, graceful degradation
             print(
-                f"  ⚠  Cloudflare bot-protection blocked the request (HTTP {e.code}).\n"
-                "  The newsletter draft was saved as an artifact — download and paste manually.",
+                f"  ⚠  HTTP 403 blocked (Cloudflare bot-protection or expired cookie).\n"
+                "  Newsletter draft saved as artifact — download and paste manually.",
                 file=sys.stderr,
             )
             raise CloudflareBlockedError(e.code)
