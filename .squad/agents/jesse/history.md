@@ -3,9 +3,9 @@
 ## Project Context
 Content Empire — Autonomous content production, distribution, and monetization.
 Mission: Produce, distribute, and monetize content. Every piece must generate revenue.
-Owner: Tamir Dresher
+Owner: tdsquadAI Team
 
-Revenue streams: YouTube (TechAI Explained), Gumroad, Udemy/Skillshare, Blog (tamirdresher.com), SaaS Finder Hub, Newsletter (Kit), Books
+Revenue streams: YouTube (TechAI Explained), Gumroad, Udemy/Skillshare, Blog (techai-explained.netlify.app), SaaS Finder Hub, Newsletter (Kit), Books
 
 Content sources: 50+ lecture PPTXs, blog posts, code demos
 
@@ -26,3 +26,4 @@ Autonomy targets:
 - **Tools:** Video narration via personal voice synthesis, editing automation with Python scripts
 - **Next phase:** Establish consistent publishing schedule, optimize thumbnails/titles, cross-promote to social media
 - **Content sources:** Lecture PPTXs + code demos + written articles converted to video format
+
