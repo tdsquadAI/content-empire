@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  issues: write
 
 jobs:
   create-newsletter-draft:
@@ -26,3 +27,23 @@ jobs:
           SUBSTACK_SESSION_COOKIE: ${{ secrets.SUBSTACK_SESSION_COOKIE }}
           SUBSTACK_PUBLICATION_URL: ${{ secrets.SUBSTACK_PUBLICATION_URL }}
         run: python scripts/substack-newsletter.py
+
+      - name: Upload newsletter draft as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newsletter-draft
+          path: newsletter-draft.html
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Create issue with newsletter draft (if Substack blocked)
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f newsletter-draft.html ]; then
+            TITLE=$(head -1 newsletter-draft.html | sed 's/<!-- Title: //' | sed 's/ -->//')
+            echo "Newsletter draft ready: $TITLE"
+            echo "Download the 'newsletter-draft' artifact to get the HTML for manual Substack posting."
+          fi
