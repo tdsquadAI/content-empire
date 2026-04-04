@@ -4,7 +4,17 @@
 
 Content Empire is an open-source tech content publishing platform. We produce high-quality articles, hands-on courses, and practical developer resources — all freely available.
 
-🌐 **[Visit the Blog →](https://content-empire.netlify.app/)**
+🌐 **[Visit the Blog →](https://content-empire.netlify.app/)** · 🛒 **[Gumroad Store →](https://tdsquad.gumroad.com)** · 💖 **[Sponsor →](https://github.com/sponsors/tdsquadAI)**
+
+---
+
+## 🛒 Digital Products
+
+| Product | Price | Link |
+|---------|-------|------|
+| **Mastering AI Agent Teams with Squad** — 5 complete modules with exercises and quizzes | $14.99 | [Get it →](https://tdsquad.gumroad.com/l/squad-mastery) |
+| **AI-Powered Development** — From Copilot to autonomous agent teams (Early Access) | $9.99 | [Get it →](https://tdsquad.gumroad.com/l/ai-powered-dev) |
+| **Prompt Engineering Cheat Sheet** — CIDER framework, code gen patterns, agent prompts | $4.99 | [Get it →](https://tdsquad.gumroad.com/l/prompt-cheatsheet) |
 
 ---
 
@@ -18,7 +28,7 @@ Content Empire is an open-source tech content publishing platform. We produce hi
 | [From Zero to Revenue: Indie Game Dev in 2026](site/content/posts/indie-game-dev-2026.md) | Game Dev, Business |
 | [Why Every Developer Should Build a Content Empire](site/content/posts/build-content-empire.md) | Content, Career |
 
-## 🎓 Courses
+## 🎓 Free Courses
 
 ### AI-Powered Development: From Copilot to Full Agent Teams
 A 7-module mini-course covering the full spectrum of AI development tools.
@@ -65,8 +75,11 @@ We welcome contributions! Here's how:
 ## 📬 Connect
 
 - 🌐 [Blog](https://content-empire.netlify.app/)
-- 💻 [GitHub](https://github.com/content-empire-pub/content-empire)
-- 🐦 [Twitter/X](https://twitter.com/ContentEmpireHQ)
+- 🛒 [Gumroad Store](https://tdsquad.gumroad.com)
+- 📰 [Medium](https://medium.com/@tdsquadai)
+- 📝 [Dev.to](https://dev.to/techaiexplained)
+- 🎬 [YouTube](https://www.youtube.com/channel/UCizqKpAji11NLg-JtDbbP9g)
+- 💖 [Sponsor Us](https://github.com/sponsors/tdsquadAI)
 
 ---
 
