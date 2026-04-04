@@ -137,7 +137,7 @@ The hidden cost of not automating isn't just time — it's the accumulation of t
 
 ---
 
-*Want to supercharge your development workflow with AI agents and automation?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev)** — hands-on modules on building CI/CD agents and automated workflows. **Early bird: $9.99** (regular $19.99).
+*Want to supercharge your development workflow with AI agents and automation?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev)** — hands-on modules on building CI/CD agents and automated workflows. **Early bird: $9.99** (regular $19.99).
 
 *Follow Content Empire on [Medium](https://medium.com/@contentempire) for more developer productivity guides.*
 

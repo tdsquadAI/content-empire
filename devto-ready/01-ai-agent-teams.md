@@ -72,6 +72,6 @@ Start small with just implementer + reviewer. You'll never go back.
 
 ---
 
-📚 **Want the full deep dive?** [AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev) — **$9.99 early bird**.
+📚 **Want the full deep dive?** [AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev) — **$9.99 early bird**.
 
 {% tag ai, agents, programming, automation %}

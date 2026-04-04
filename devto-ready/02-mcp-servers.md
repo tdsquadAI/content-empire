@@ -86,6 +86,6 @@ If you maintain internal tools or APIs, wrapping them in an MCP server is the hi
 
 ---
 
-📚 **Go deeper:** [AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev) — covers MCP, agent patterns, and production workflows. **$9.99 early bird**.
+📚 **Go deeper:** [AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev) — covers MCP, agent patterns, and production workflows. **$9.99 early bird**.
 
 {% tag ai, mcp, programming, tools %}

@@ -72,6 +72,6 @@ Pick your most annoying manual task. Automate it. Pick the next one. Repeat. Wit
 
 ---
 
-📚 **Level up:** [AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev) — build CI/CD agents and automated workflows. **$9.99 early bird**.
+📚 **Level up:** [AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev) — build CI/CD agents and automated workflows. **$9.99 early bird**.
 
 {% tag automation, devops, productivity, programming %}

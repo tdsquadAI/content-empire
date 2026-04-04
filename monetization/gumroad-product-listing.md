@@ -113,11 +113,11 @@ Emerging patterns and tools. Building your AI-first development practice. Career
 
 ## After Creating
 
-Your Gumroad product URL will be: `https://gumroad.com/l/ai-powered-dev`
+Your Gumroad product URL will be: `https://squadai.gumroad.com/l/ai-powered-dev`
 
 Update these files with the real URL:
 1. `content-empire/course-product.md` — Replace "[Coming soon]" placeholders
 2. `content-empire/site/content/courses/ai-powered-dev/landing.md` — Add buy button
-3. `content-empire/medium-ready/*.md` — CTAs already use `https://gumroad.com/l/ai-powered-dev`
+3. `content-empire/medium-ready/*.md` — CTAs already use `https://squadai.gumroad.com/l/ai-powered-dev`
 4. `content-empire/devto-ready/*.md` — CTAs already use the same URL
 5. `techai-explained/src/courses/` — Add CTA if applicable

@@ -290,4 +290,4 @@ Rate your prompts before sending:
 ---
 
 *Built by TDSquad DevTools — developer tools for the AI era.*
-*Get more at [tdsquad.gumroad.com](https://tdsquad.gumroad.com)*
+*Get more at [squadai.gumroad.com](https://squadai.gumroad.com)*

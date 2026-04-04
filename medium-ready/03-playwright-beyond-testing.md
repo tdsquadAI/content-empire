@@ -258,7 +258,7 @@ Start with one repetitive web task you do manually. Automate it with Playwright.
 
 ---
 
-*Want to learn more about automating your entire development workflow?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev)** — includes hands-on modules on building automation agents. **Early bird: $9.99** (regular $19.99).
+*Want to learn more about automating your entire development workflow?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev)** — includes hands-on modules on building automation agents. **Early bird: $9.99** (regular $19.99).
 
 *Follow Content Empire on [Medium](https://medium.com/@contentempire) for more developer productivity guides.*
 

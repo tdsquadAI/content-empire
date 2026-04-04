@@ -125,10 +125,10 @@ Format: Markdown (works in any editor, easy to reference while coding)
 
 1. **Test checkout:** Open each product page in incognito, verify "Buy" button works
 2. **Share links:**
-   - `https://tdsquad.gumroad.com/l/squad-mastery`
-   - `https://tdsquad.gumroad.com/l/ai-powered-dev`
-   - `https://tdsquad.gumroad.com/l/prompt-cheatsheet`
-3. **Profile page:** Visit `https://tdsquad.gumroad.com` — all 3 should appear
+   - `https://squadai.gumroad.com/l/squad-mastery`
+   - `https://squadai.gumroad.com/l/ai-powered-dev`
+   - `https://squadai.gumroad.com/l/prompt-cheatsheet`
+3. **Profile page:** Visit `https://squadai.gumroad.com` — all 3 should appear
 
 ---
 

@@ -20,7 +20,7 @@ Everything below takes ~30 minutes total and unlocks $2-4K/mo in potential reven
 ### 1. Publish Gumroad Products (~10 min)
 > Follow `gumroad-packages/PUBLISH-NOW.md` for exact steps
 
-Login at https://tdsquad.gumroad.com and upload these 3 products:
+Login at https://squadai.gumroad.com and upload these 3 products:
 
 | Product | File | Price |
 |---------|------|-------|

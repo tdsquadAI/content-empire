@@ -16,7 +16,7 @@
 
 ## Revenue Streams Managed
 1. YouTube (TechAI Explained) — ad revenue + affiliate links in descriptions
-2. Gumroad (tdsquad.gumroad.com) — digital products
+2. Gumroad (squadai.gumroad.com) — digital products
 3. Udemy/Skillshare — online courses
 4. Blog (content-empire-pub.github.io) — affiliate links, sponsored content
 5. SaaS Finder Hub — SEO affiliate articles

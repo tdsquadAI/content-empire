@@ -4,7 +4,7 @@
 
 Content Empire is an open-source tech content publishing platform. We produce high-quality articles, hands-on courses, and practical developer resources — all freely available.
 
-🌐 **[Visit the Blog →](https://content-empire.netlify.app/)** · 🛒 **[Gumroad Store →](https://tdsquad.gumroad.com)** · 💖 **[Sponsor →](https://github.com/sponsors/tdsquadAI)**
+🌐 **[Visit the Blog →](https://content-empire.netlify.app/)** · 🛒 **[Gumroad Store →](https://squadai.gumroad.com)** · 💖 **[Sponsor →](https://github.com/sponsors/tdsquadAI)**
 
 ---
 
@@ -12,9 +12,9 @@ Content Empire is an open-source tech content publishing platform. We produce hi
 
 | Product | Price | Link |
 |---------|-------|------|
-| **Mastering AI Agent Teams with Squad** — 5 complete modules with exercises and quizzes | $14.99 | [Get it →](https://tdsquad.gumroad.com/l/squad-mastery) |
-| **AI-Powered Development** — From Copilot to autonomous agent teams (Early Access) | $9.99 | [Get it →](https://tdsquad.gumroad.com/l/ai-powered-dev) |
-| **Prompt Engineering Cheat Sheet** — CIDER framework, code gen patterns, agent prompts | $4.99 | [Get it →](https://tdsquad.gumroad.com/l/prompt-cheatsheet) |
+| **Mastering AI Agent Teams with Squad** — 5 complete modules with exercises and quizzes | $14.99 | [Get it →](https://squadai.gumroad.com/l/squad-mastery) |
+| **AI-Powered Development** — From Copilot to autonomous agent teams (Early Access) | $9.99 | [Get it →](https://squadai.gumroad.com/l/ai-powered-dev) |
+| **Prompt Engineering Cheat Sheet** — CIDER framework, code gen patterns, agent prompts | $4.99 | [Get it →](https://squadai.gumroad.com/l/prompt-cheatsheet) |
 
 ---
 
@@ -75,7 +75,7 @@ We welcome contributions! Here's how:
 ## 📬 Connect
 
 - 🌐 [Blog](https://content-empire.netlify.app/)
-- 🛒 [Gumroad Store](https://tdsquad.gumroad.com)
+- 🛒 [Gumroad Store](https://squadai.gumroad.com)
 - 📰 [Medium](https://medium.com/@tdsquadai)
 - 📝 [Dev.to](https://dev.to/techaiexplained)
 - 🎬 [YouTube](https://www.youtube.com/channel/UCizqKpAji11NLg-JtDbbP9g)

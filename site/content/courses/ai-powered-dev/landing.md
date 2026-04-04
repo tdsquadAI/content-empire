@@ -131,7 +131,7 @@ We believe the best way to learn AI development is to build real tools that solv
     <p style="font-size: 1.1rem;">All 7 modules, lifetime updates, hands-on exercises.</p>
     <p style="font-size: 1.3rem; margin: 1rem 0;"><strong><s style="color: #888;">$19.99</s> <span style="color: #ff006e;">$9.99 Early Bird</span></strong></p>
     <p>
-        <a href="https://gumroad.com/l/ai-powered-dev" style="display: inline-block; padding: 0.75rem 2rem; background: #ff006e; color: white; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; margin: 0.5rem;">🛒 Buy Now — $9.99</a>
+        <a href="https://squadai.gumroad.com/l/ai-powered-dev" style="display: inline-block; padding: 0.75rem 2rem; background: #ff006e; color: white; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; margin: 0.5rem;">🛒 Buy Now — $9.99</a>
     </p>
     <p style="margin-top: 1rem;">
         <a href="module-1-landscape/" style="display: inline-block; padding: 0.75rem 1.5rem; background: #00d4ff; color: #0a0a2e; border-radius: 8px; text-decoration: none; font-weight: 600;">Preview Module 1 Free →</a>
@@ -140,4 +140,4 @@ We believe the best way to learn AI development is to build real tools that solv
 
 ---
 
-*This course is produced by the Content Empire Team. Free preview available for Module 1. Full course available on [Gumroad](https://gumroad.com/l/ai-powered-dev).*
+*This course is produced by the Content Empire Team. Free preview available for Module 1. Full course available on [Gumroad](https://squadai.gumroad.com/l/ai-powered-dev).*

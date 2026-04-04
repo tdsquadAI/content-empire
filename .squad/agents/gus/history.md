@@ -18,7 +18,7 @@ Autonomy targets:
 ## Learnings
 
 ### Distribution & Monetization Platforms (seeded 2026-03-22)
-- **Primary platforms:** Gumroad (tdsquad.gumroad.com), Udemy/Skillshare, SaaS Finder Hub
+- **Primary platforms:** Gumroad (squadai.gumroad.com), Udemy/Skillshare, SaaS Finder Hub
 - **Gumroad products:** Game Bundle ($4.99), courses, upcoming digital products
 - **Affiliate setup:** Amazon Associates tag configured (jellybolt-20), pending activation; JetBrains + Unity affiliate pending signup
 - **Cross-platform strategy:** Content published to Medium (5 articles ready), Dev.to (3 articles ready), Hashnode (pending)

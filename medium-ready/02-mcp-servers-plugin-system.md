@@ -248,7 +248,7 @@ If you maintain any internal tools, APIs, or services, wrapping them in an MCP s
 
 ---
 
-*Want to go deeper on AI agent architectures and tool integration?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev)** — covers MCP, multi-agent patterns, and production agent workflows. **Early bird: $9.99** (regular $19.99).
+*Want to go deeper on AI agent architectures and tool integration?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev)** — covers MCP, multi-agent patterns, and production agent workflows. **Early bird: $9.99** (regular $19.99).
 
 *Follow Content Empire on [Medium](https://medium.com/@contentempire) for more developer productivity guides.*
 

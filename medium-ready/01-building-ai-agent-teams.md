@@ -152,7 +152,7 @@ Start small. Build a two-agent setup (implementer + reviewer) and measure the qu
 
 ---
 
-*Want to learn how to build your own AI agent teams from scratch?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://gumroad.com/l/ai-powered-dev)** — a hands-on course covering everything from prompt engineering to production multi-agent pipelines. **Early bird price: $9.99** (regular $19.99).
+*Want to learn how to build your own AI agent teams from scratch?* Check out **[AI-Powered Development: From Copilot to Full Agent Teams](https://squadai.gumroad.com/l/ai-powered-dev)** — a hands-on course covering everything from prompt engineering to production multi-agent pipelines. **Early bird price: $9.99** (regular $19.99).
 
 *Follow Content Empire on [Medium](https://medium.com/@contentempire) for more developer productivity guides.*
 
