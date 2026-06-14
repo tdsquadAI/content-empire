@@ -14,7 +14,8 @@ param(
     [string]$Repo  = "content-empire",
     [int]$StaleDays = 3,
     [switch]$Loop,
-    [int]$IntervalMinutes = 60
+    [int]$IntervalMinutes = 60,
+    [int]$RoundTimeoutMinutes = 30
 )
 
 # ── Company Objectives ────────────────────────────────────────────────────────
@@ -167,13 +168,127 @@ function Write-Report {
     Write-Host "═══════════════════════════════════════════════════" -ForegroundColor Yellow
 }
 
-# Main execution
-Write-Report
+function Invoke-Agency {
+    <#
+    .SYNOPSIS
+        Invokes agency copilot to actually work on issues after reporting.
+    .DESCRIPTION
+        Uses the proven wrapper-script pattern to avoid argument splitting.
+        Includes timeout guard and consecutive failure tracking.
+    #>
+    param(
+        [int]$Round = 1
+    )
+    
+    $timestamp = Get-Date -Format "HH:mm:ss"
+    Write-Host ""
+    Write-Host "  🚀 INVOKING AGENCY (Round $Round)..." -ForegroundColor Cyan
+    Write-Host "     Working directory: $((Get-Location).Path)" -ForegroundColor DarkGray
+    
+    $prompt = "Ralph, Go! Check the open issues in content-empire and work on actionable ones. Follow routing rules in .squad/routing.md. Focus on content creation, publishing, and monetization tasks."
+    
+    try {
+        $ErrorActionPreference_saved = $ErrorActionPreference
+        $ErrorActionPreference = "SilentlyContinue"
+        
+        # Write prompt to temp file to avoid Start-Process argument splitting
+        $promptFile = Join-Path $env:TEMP "ralph-prompt-content-empire-$Round.txt"
+        [System.IO.File]::WriteAllText($promptFile, $prompt, [System.Text.Encoding]::UTF8)
 
-if ($Loop) {
-    Write-Host "  🔄 Looping every $IntervalMinutes minutes. Ctrl+C to stop." -ForegroundColor DarkGray
-    while ($true) {
-        Start-Sleep -Seconds ($IntervalMinutes * 60)
-        Write-Report
+        # Create thin wrapper script that reads prompt from file and calls agency
+        $wrapperScript = Join-Path $env:TEMP "ralph-round-content-empire-$Round.ps1"
+        @"
+`$promptFile = '$($promptFile.Replace("'","''"))'
+`$p = [System.IO.File]::ReadAllText(`$promptFile)
+`$singleLine = `$p -replace "``r``n", " " -replace "``n", " "
+# Try without -- first (works with agency v2026.3.27+); fall back to -- --agent for older versions
+agency copilot --yolo --autopilot --agent squad -p `$singleLine
+if (`$LASTEXITCODE -ne 0) {
+    Write-Host "[fallback] Retrying with -- --agent squad separator"
+    agency copilot --yolo --autopilot -p `$singleLine -- --agent squad
+}
+exit `$LASTEXITCODE
+"@ | Out-File -FilePath $wrapperScript -Encoding utf8 -Force
+
+        # Launch wrapper script with timeout guard
+        $agencyProc = Start-Process -FilePath "pwsh" `
+            -ArgumentList @("-NoProfile", "-ExecutionPolicy", "Bypass", "-File", $wrapperScript) `
+            -PassThru -NoNewWindow
+        $timedOut = $false
+        $timeoutMs = $RoundTimeoutMinutes * 60 * 1000
+        
+        if (-not $agencyProc.WaitForExit($timeoutMs)) {
+            $timedOut = $true
+            Write-Host "[$timestamp] TIMEOUT: Round $Round exceeded ${RoundTimeoutMinutes}m limit — killing agency process (PID $($agencyProc.Id))" -ForegroundColor Red
+            # Kill the agency process and its children
+            try {
+                $childProcs = Get-CimInstance Win32_Process | Where-Object { $_.ParentProcessId -eq $agencyProc.Id }
+                foreach ($child in $childProcs) {
+                    Stop-Process -Id $child.ProcessId -Force -ErrorAction SilentlyContinue
+                }
+                Stop-Process -Id $agencyProc.Id -Force -ErrorAction SilentlyContinue
+            } catch {
+                Write-Host "  Warning: Could not kill all child processes: $($_.Exception.Message)" -ForegroundColor Yellow
+            }
+        }
+        
+        $exitCode = if ($timedOut) { 124 } else { $agencyProc.ExitCode }
+        $ErrorActionPreference = $ErrorActionPreference_saved
+        
+        # Report outcome
+        if ($timedOut) {
+            Write-Host "  ❌ Agency timed out after ${RoundTimeoutMinutes}m" -ForegroundColor Red
+            return @{ Success = $false; ExitCode = 124; TimedOut = $true }
+        } elseif ($exitCode -eq 0) {
+            Write-Host "  ✅ Agency completed successfully (exit: $exitCode)" -ForegroundColor Green
+            return @{ Success = $true; ExitCode = 0; TimedOut = $false }
+        } else {
+            Write-Host "  ❌ Agency failed (exit: $exitCode)" -ForegroundColor Red
+            return @{ Success = $false; ExitCode = $exitCode; TimedOut = $false }
+        }
+        
+    } catch {
+        Write-Host "  ❌ Error invoking agency: $($_.Exception.Message)" -ForegroundColor Red
+        return @{ Success = $false; ExitCode = 1; Error = $_.Exception.Message }
     }
 }
+
+# Main execution
+$consecutiveFailures = 0
+$round = 1
+
+do {
+    Write-Report
+    
+    if ($Loop) {
+        # Invoke agency to actually work on issues
+        $result = Invoke-Agency -Round $round
+        
+        # Track consecutive failures for self-escalation
+        if ($result.Success) {
+            $consecutiveFailures = 0
+        } else {
+            $consecutiveFailures++
+            
+            # Self-escalation: if Ralph keeps failing, create an issue
+            if ($consecutiveFailures -ge 3 -and ($consecutiveFailures % 3) -eq 0) {
+                Write-Host "  ⚠️  WARNING: $consecutiveFailures consecutive failures! Escalating..." -ForegroundColor Red
+                try {
+                    $machineName = $env:COMPUTERNAME
+                    $currentDir = (Get-Location).Path
+                    $currentBranch = git branch --show-current 2>$null
+                    $escBody = "Content Empire Ralph on $machineName has failed $consecutiveFailures consecutive rounds. Last exit code: $($result.ExitCode). Directory: $currentDir. Branch: $currentBranch. Please investigate and fix. Common causes: wrong branch, stale mutex, bloated prompt, agency copilot timeout."
+                    $escTitle = "[Ralph SOS] Content Empire Ralph failing - $consecutiveFailures consecutive failures on $machineName"
+                    gh issue create --repo "$Owner/$Repo" --title $escTitle --body $escBody --label "squad,squad:belanna" 2>$null
+                    Write-Host "  📋 Escalation issue created" -ForegroundColor Yellow
+                } catch {
+                    Write-Host "  ⚠️  Failed to create escalation issue: $_" -ForegroundColor Yellow
+                }
+            }
+        }
+        
+        $round++
+        Write-Host "  🔄 Waiting $IntervalMinutes minutes until next round..." -ForegroundColor DarkGray
+        Start-Sleep -Seconds ($IntervalMinutes * 60)
+    }
+} while ($Loop)

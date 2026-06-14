@@ -2,3 +2,10 @@
 .env
 .env.*
 
+
+# Hugo intermediate build output
+public-build/
+
+# Ralph runtime state (per-machine)
+.squad/ralph-circuit-breaker.json
+
