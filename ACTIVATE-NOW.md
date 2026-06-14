@@ -8,7 +8,7 @@ Everything below takes ~30 minutes total and unlocks $2-4K/mo in potential reven
 - [x] Identity separation (291 files cleaned, 0 leaks)
 - [x] 3 Gumroad products packaged and ready
 - [x] Landing page updated with product cards + pricing
-- [x] FUNDING.yml on all repos → `github: tdsquadai`
+- [x] FUNDING.yml on all repos → `github: content-empire-pub`
 - [x] 10 Medium articles written and verified clean
 - [x] GitHub Sponsors tier descriptions drafted
 - [x] README updated with product links + sponsor CTA
@@ -35,7 +35,7 @@ For each product:
 4. Click Publish
 
 ### 2. Enable GitHub Sponsors (~5 min)
-1. Go to https://github.com/sponsors/tdsquadAI/dashboard
+1. Go to https://github.com/sponsors/content-empire-pub/dashboard
 2. Click "Get started"
 3. Set up payout (Stripe or bank account)
 4. Copy tiers from `github-sponsors/SPONSORS-SETUP.md`
@@ -50,7 +50,7 @@ For each product:
 5. Then run: `$env:MEDIUM_INTEGRATION_TOKEN = "your-token-here"`
 
 **Option B:** Session Cookie
-1. Open Medium in Edge (logged into tdsquadai)
+1. Open Medium in Edge (logged into the Content Empire account)
 2. Press F12 → Application → Cookies → medium.com
 3. Find `sid` cookie, copy its value
 4. Then run: `$env:MEDIUM_SESSION_COOKIE = "sid=your-value-here"`

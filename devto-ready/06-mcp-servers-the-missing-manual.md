@@ -546,4 +546,4 @@ And if it is? Scale it. Build more servers. Connect more tools. Watch your AI as
 
 ---
 
-*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/tdsquadAI)*
+*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/content-empire-pub)*

@@ -1,8 +1,8 @@
-# GitHub Sponsors Setup for tdsquadAI
+# GitHub Sponsors Setup for Content Empire
 
 ## How to Enable (Human Action Required)
 
-1. Go to https://github.com/sponsors/tdsquadAI/dashboard
+1. Go to https://github.com/sponsors/content-empire-pub/dashboard
 2. Click "Get started" to create a sponsors listing
 3. Fill in your payout info (bank account or Stripe)
 4. Set up tiers (copy from below)
@@ -82,6 +82,6 @@ Every dollar goes directly into building better tools for developers.
 ## After Approval
 
 1. GitHub will notify you (usually 24-48 hours)
-2. The "Sponsor" button appears on all tdsquadAI repos
-3. FUNDING.yml already set up ✅ (points to `github: tdsquadai`)
+2. The "Sponsor" button appears on all Content Empire org repos
+3. FUNDING.yml already set up ✅ (points to `github: content-empire-pub`)
 4. Add sponsor CTA to README files across repos

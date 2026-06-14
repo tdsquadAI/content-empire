@@ -130,7 +130,7 @@ Our Website is hosted in the United States. If you access our Website from outsi
 
 If you have questions about this Privacy Policy, wish to exercise your rights, or have concerns about our privacy practices, please contact us at:
 
-**Email:** tdsquadai@gmail.com
+**Email:** contentempire@sharebot.net
 
 We will respond to your inquiries within 30 days.
 

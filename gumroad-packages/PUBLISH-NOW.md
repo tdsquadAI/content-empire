@@ -141,4 +141,4 @@ Format: Markdown (works in any editor, easy to reference while coding)
 
 ---
 
-*All product files are in: `tdsquadAI/content-empire/gumroad-packages/`*
+*All product files are in: `content-empire-pub/content-empire/gumroad-packages/`*

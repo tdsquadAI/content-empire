@@ -401,4 +401,4 @@ You might just find yourself doing the same thing I did: replacing 80% of your B
 
 ---
 
-*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/tdsquadAI)*
+*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/content-empire-pub)*

@@ -37,7 +37,7 @@ ARTICLES_DIR = REPO_ROOT / "medium-ready"
 TRACKING_FILE = Path(__file__).resolve().parent / "medium-posted.json"
 MEDIUM_API = "https://api.medium.com/v1"
 MEDIUM_INTERNAL_API = "https://medium.com/_/api"
-MEDIUM_USER_ID = "707207c087d9"  # tdsquadai account
+MEDIUM_USER_ID = "707207c087d9"  # Content Empire / TechAI Explained account
 
 
 def md_to_html(md_text: str) -> str:

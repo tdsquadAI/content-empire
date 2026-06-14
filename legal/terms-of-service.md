@@ -234,7 +234,7 @@ If any provision of these Terms of Service is found to be invalid or unenforceab
 
 For questions about these Terms of Service, please contact us at:
 
-**Email:** tdsquadai@gmail.com
+**Email:** contentempire@sharebot.net
 
 We will respond to your inquiries within 30 days.
 

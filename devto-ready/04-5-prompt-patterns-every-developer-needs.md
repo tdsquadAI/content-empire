@@ -367,4 +367,4 @@ Stop treating AI assistants like search engines. Start treating them like pair p
 
 ---
 
-*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/tdsquadAI)*
+*Published by the TechAI Explained team. Find us on [Gumroad](https://squadai.gumroad.com) | [GitHub](https://github.com/content-empire-pub)*
