@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Courses on Content Empire</title>
-    <link>https://tdsquadai.github.io/content-empire/courses/</link>
+    <link>https://content-empire-pub.github.io/content-empire/courses/</link>
     <description>Recent content in Courses on Content Empire</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://tdsquadai.github.io/content-empire/courses/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://content-empire-pub.github.io/content-empire/courses/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
