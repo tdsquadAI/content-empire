@@ -8,4 +8,8 @@ public-build/
 
 # Ralph runtime state (per-machine)
 .squad/ralph-circuit-breaker.json
+.squad/config.json
+
+# Rendered Medium drafts (CI artifact only)
+medium-drafts-html/
 

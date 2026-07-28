@@ -32,9 +32,14 @@ except ImportError:
 import urllib.request
 import urllib.error
 
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ARTICLES_DIR = REPO_ROOT / "medium-ready"
 TRACKING_FILE = Path(__file__).resolve().parent / "medium-posted.json"
+EXPORT_DIR = REPO_ROOT / "medium-drafts-html"
 MEDIUM_API = "https://api.medium.com/v1"
 MEDIUM_INTERNAL_API = "https://medium.com/_/api"
 MEDIUM_USER_ID = "707207c087d9"  # Content Empire / TechAI Explained account
@@ -198,15 +203,25 @@ def save_tracking(tracking: dict) -> None:
 def main():
     parser = argparse.ArgumentParser(description="Post articles to Medium as drafts")
     parser.add_argument("--dry-run", action="store_true", help="Preview without posting")
+    parser.add_argument(
+        "--export-html",
+        action="store_true",
+        help="Also write rendered HTML for each pending article to medium-drafts-html/",
+    )
     args = parser.parse_args()
 
     # Auth: prefer session cookie (integration tokens removed for new accounts)
-    session_cookie = os.environ.get("MEDIUM_SESSION_COOKIE", "")
-    integration_token = os.environ.get("MEDIUM_INTEGRATION_TOKEN", "")
+    session_cookie = os.environ.get("MEDIUM_SESSION_COOKIE", "").strip()
+    integration_token = os.environ.get("MEDIUM_INTEGRATION_TOKEN", "").strip()
 
-    if not session_cookie and not integration_token and not args.dry_run:
-        print("✗ Set MEDIUM_SESSION_COOKIE (preferred) or MEDIUM_INTEGRATION_TOKEN", file=sys.stderr)
-        sys.exit(1)
+    has_auth = bool(session_cookie or integration_token)
+    # Without credentials we still render HTML so the drafts can be pasted manually,
+    # rather than failing the scheduled pipeline every week.
+    export_only = not has_auth and not args.dry_run
+    if export_only:
+        print("⚠  No MEDIUM_SESSION_COOKIE / MEDIUM_INTEGRATION_TOKEN set.")
+        print("   Falling back to HTML export only (no API calls).")
+        args.export_html = True
 
     use_cookie_auth = bool(session_cookie)
 
@@ -222,13 +237,17 @@ def main():
         sys.exit(0)
 
     if not args.dry_run:
-        if use_cookie_auth:
+        if export_only:
+            print("Auth: none (HTML export mode)")
+        elif use_cookie_auth:
             print(f"Auth: session cookie (user ID: {MEDIUM_USER_ID})")
         else:
             print("Auth: integration token (legacy)")
 
     posted = 0
     skipped = 0
+    failed = 0
+    exported = 0
 
     for article_path in articles:
         key = article_path.name
@@ -260,8 +279,20 @@ def main():
         print(f"  Tags  : {tags}")
         print(f"  Body  : {len(html)} chars of HTML")
 
+        if args.export_html:
+            EXPORT_DIR.mkdir(exist_ok=True)
+            export_path = EXPORT_DIR / f"{article_path.stem}.html"
+            export_path.write_text(
+                f"<!-- Title: {title} -->\n<!-- Tags: {', '.join(tags)} -->\n{html}",
+                encoding="utf-8",
+            )
+            print(f"  ↳ HTML exported: {export_path.relative_to(REPO_ROOT)}")
+            exported += 1
+
         if args.dry_run:
             print("  [DRY RUN] Would post to Medium")
+        elif export_only:
+            print("  [EXPORT ONLY] Skipping API call (no credentials)")
         else:
             print("  Posting…")
             try:
@@ -275,8 +306,22 @@ def main():
                 posted += 1
             except Exception as e:
                 print(f"  ✗ Failed: {e}", file=sys.stderr)
+                failed += 1
 
-    print(f"\nDone. Posted: {posted}, Skipped: {skipped}")
+    print(f"\nDone. Posted: {posted}, Skipped: {skipped}, Exported: {exported}, Failed: {failed}")
+
+    if failed and not posted:
+        print(
+            "✗ Every Medium post attempt failed - credentials are likely expired.",
+            file=sys.stderr,
+        )
+        print(
+            "  Refresh MEDIUM_SESSION_COOKIE. HTML drafts are still available as artifacts."
+            if exported
+            else "  Refresh MEDIUM_SESSION_COOKIE.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
 
 
 if __name__ == "__main__":
