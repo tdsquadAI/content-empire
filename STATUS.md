@@ -94,8 +94,11 @@ Located in `site/content/posts/`:
   4. Create First Digital Product (Prompt Engineering Cheat Sheet $4.99)
 
 ## Pending Actions
+- [ ] **BLOCKED** Fix `deploy.yml` to publish `docs/` (see org issue #2). Patch is on local
+      branch `fix/deploy-full-site`; cannot be pushed without a `workflow`-scoped token.
+      Verified live: `/posts/` returns 404 because only `index.html` is deployed.
+- [ ] **BLOCKED** Grant push access on `content-empire-pub/content-empire` (see org issue #3)
 - [ ] Consolidate Gumroad stores (squadai vs tdsquad) and update `GUMROAD_STORE_URL` variable
-- [ ] Grant push access on `content-empire-pub/content-empire` (local machine can only push to `origin`)
 - [ ] Publish 5 articles to Medium (follow PUBLISHING_CHECKLIST.md schedule)
 - [ ] Publish 3 articles to Dev.to
 - [ ] Create Gumroad listing for AI-Powered Dev course
