@@ -41,7 +41,7 @@ Our content is practical, honest, and free. We write about what works, call out 
 
 Topics: AI Agents · DevOps · Kubernetes · Indie Development · Content Strategy · Developer Productivity
 
-🌐 Blog: https://content-empire.netlify.app/
+🌐 Blog: https://content-empire-pub.github.io/content-empire/
 💻 GitHub: https://github.com/content-empire-pub/content-empire
 ```
 

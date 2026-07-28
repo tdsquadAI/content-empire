@@ -21,7 +21,7 @@
 - [ ] Paste the markdown content
 - [ ] Review formatting (code blocks, tables, images)
 - [ ] Add cover image (suggestion: robot team / AI collaboration visual)
-- [ ] Set canonical URL to: `https://content-empire.netlify.app/posts/building-ai-agent-teams/`
+- [ ] Set canonical URL to: `https://content-empire-pub.github.io/content-empire/posts/building-ai-agent-teams/`
 - [ ] Add tags: `AI`, `Agents`, `Software Development`, `Automation`, `Programming`
 - [ ] Submit to **Better Programming** or **Towards Data Science** publication
 - [ ] Publish or schedule
@@ -29,25 +29,25 @@
 #### Article 2: MCP Servers — The Plugin System AI Agents Were Missing
 - [ ] Open `medium-ready/02-mcp-servers-plugin-system.md`
 - [ ] Same process as above
-- [ ] Canonical URL: `https://content-empire.netlify.app/posts/mcp-servers-plugin-system/`
+- [ ] Canonical URL: `https://content-empire-pub.github.io/content-empire/posts/mcp-servers-plugin-system/`
 - [ ] Tags: `AI`, `MCP`, `Architecture`, `Tools`, `Programming`
 - [ ] Submit to **Better Programming**
 
 #### Article 3: Browser Automation with Playwright — Beyond Testing
 - [ ] Open `medium-ready/03-playwright-beyond-testing.md`
-- [ ] Canonical URL: `https://content-empire.netlify.app/posts/playwright-beyond-testing/`
+- [ ] Canonical URL: `https://content-empire-pub.github.io/content-empire/posts/playwright-beyond-testing/`
 - [ ] Tags: `Playwright`, `Automation`, `JavaScript`, `Web Scraping`, `Productivity`
 - [ ] Submit to **JavaScript in Plain English** or **Better Programming**
 
 #### Article 4: Building a Content Empire with Zero Employees
 - [ ] Open `medium-ready/04-content-empire-zero-employees.md`
-- [ ] Canonical URL: `https://content-empire.netlify.app/posts/content-empire-zero-employees/`
+- [ ] Canonical URL: `https://content-empire-pub.github.io/content-empire/posts/content-empire-zero-employees/`
 - [ ] Tags: `AI`, `Content Creation`, `Solopreneur`, `Business`, `Automation`
 - [ ] Submit to **The Startup**
 
 #### Article 5: The Hidden Cost of Not Automating
 - [ ] Open `medium-ready/05-hidden-cost-of-not-automating.md`
-- [ ] Canonical URL: `https://content-empire.netlify.app/posts/hidden-cost-of-not-automating/`
+- [ ] Canonical URL: `https://content-empire-pub.github.io/content-empire/posts/hidden-cost-of-not-automating/`
 - [ ] Tags: `DevOps`, `Automation`, `Productivity`, `CI/CD`, `Programming`
 - [ ] Submit to **Better Programming** or **Level Up Coding**
 
@@ -97,7 +97,7 @@ curl -X POST https://dev.to/api/articles \
       "body_markdown": "PASTE_MARKDOWN_HERE",
       "published": true,
       "tags": ["ai", "agents", "programming", "automation"],
-      "canonical_url": "https://content-empire.netlify.app/posts/building-ai-agent-teams/"
+      "canonical_url": "https://content-empire-pub.github.io/content-empire/posts/building-ai-agent-teams/"
     }
   }'
 ```

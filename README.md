@@ -4,7 +4,7 @@
 
 Content Empire is an open-source tech content publishing platform. We produce high-quality articles, hands-on courses, and practical developer resources — all freely available.
 
-🌐 **[Visit the Blog →](https://content-empire.netlify.app/)** · 🛒 **[Gumroad Store →](https://squadai.gumroad.com)** · 💖 **[Sponsor →](https://github.com/sponsors/content-empire-pub)**
+🌐 **[Visit the Blog →](https://content-empire-pub.github.io/content-empire/)** · 🛒 **[Gumroad Store →](https://squadai.gumroad.com)** · 💖 **[Sponsor →](https://github.com/sponsors/content-empire-pub)**
 
 ---
 
@@ -74,7 +74,7 @@ We welcome contributions! Here's how:
 
 ## 📬 Connect
 
-- 🌐 [Blog](https://content-empire.netlify.app/)
+- 🌐 [Blog](https://content-empire-pub.github.io/content-empire/)
 - 🛒 [Gumroad Store](https://squadai.gumroad.com)
 - 📰 [Medium](https://medium.com/@techaiexplained)
 - 📝 [Dev.to](https://dev.to/techaiexplained)

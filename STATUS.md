@@ -1,11 +1,11 @@
 # Content Empire — Project Status
-Last updated: 2026-03-20
+Last updated: 2026-07-28
 
 ## Brand Identity
 - **Name:** Content Empire
 - **NEVER mention "real owner identity"** — independent brand
 - **Hugo static site** deployed to GitHub Pages (docs/ folder)
-- **Base URL:** https://content-empire.github.io/content-empire/ (needs independent domain)
+- **Base URL:** https://content-empire-pub.github.io/content-empire/ (needs independent domain)
 - **Funding:** GitHub Sponsors configured (FUNDING.yml)
 
 ## Content Produced
@@ -73,7 +73,18 @@ Located in `site/content/posts/`:
 - `REVENUE_STRATEGY.md` — Revenue strategy document
 
 ## GitHub Actions Workflows
-- `deploy.yml` — Site deployment workflow
+- `deploy.yml` — Site deployment workflow (publishes `docs/` + root `index.html` landing page to GitHub Pages)
+- `post-medium.yml`, `substack-newsletter.yml`, `upload-youtube.yml`, `deploy-netlify.yml`
+
+## Live URLs (verified 2026-07-28)
+- Site: https://content-empire-pub.github.io/content-empire/ — 200
+- Gumroad store: https://squadai.gumroad.com — 200
+  - `/l/squad-mastery` ($14.99), `/l/ai-powered-dev` ($9.99), `/l/prompt-cheatsheet` ($4.99) — all 200
+- ⚠️ `https://content-empire.netlify.app/` is dead (404). All references replaced with the GitHub Pages URL.
+- ⚠️ Two Gumroad stores exist: `squadai.gumroad.com` (used by all repo content) and
+  `tdsquad.gumroad.com` (referenced by the `GUMROAD_STORE_URL` repo variable). The
+  `GUMROAD_AI_COURSE_ID=jnmqpd` / K8s `nnefv` product IDs only resolve on `tdsquad`.
+  These need to be consolidated onto one store.
 
 ## GitHub Issues
 - Tracked in `GITHUB_ISSUES.md` (4 key issues):
@@ -83,6 +94,8 @@ Located in `site/content/posts/`:
   4. Create First Digital Product (Prompt Engineering Cheat Sheet $4.99)
 
 ## Pending Actions
+- [ ] Consolidate Gumroad stores (squadai vs tdsquad) and update `GUMROAD_STORE_URL` variable
+- [ ] Grant push access on `content-empire-pub/content-empire` (local machine can only push to `origin`)
 - [ ] Publish 5 articles to Medium (follow PUBLISHING_CHECKLIST.md schedule)
 - [ ] Publish 3 articles to Dev.to
 - [ ] Create Gumroad listing for AI-Powered Dev course

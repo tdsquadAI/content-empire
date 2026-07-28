@@ -43,7 +43,7 @@ Add front matter to the Dev.to version:
 title: "Article Title"
 published: true
 tags: tag1, tag2, tag3, tag4
-canonical_url: https://content-empire.netlify.app/posts/article-slug/
+canonical_url: https://content-empire-pub.github.io/content-empire/posts/article-slug/
 ---
 ```
 
