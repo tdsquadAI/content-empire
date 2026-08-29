@@ -7,7 +7,7 @@ on:
     - cron: "0 10 * * 1"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   post-to-medium:
@@ -26,5 +26,28 @@ jobs:
 
       - name: Post articles to Medium
         env:
+          MEDIUM_SESSION_COOKIE: ${{ secrets.MEDIUM_SESSION_COOKIE }}
           MEDIUM_INTEGRATION_TOKEN: ${{ secrets.MEDIUM_INTEGRATION_TOKEN }}
-        run: python scripts/post-to-medium.py
+        run: python scripts/post-to-medium.py --export-html
+
+      - name: Upload HTML drafts as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: medium-drafts-html
+          path: medium-drafts-html/
+          if-no-files-found: ignore
+          retention-days: 14
+
+      - name: Persist posted-article tracking
+        if: always()
+        run: |
+          if git diff --quiet -- scripts/medium-posted.json; then
+            echo "No new Medium drafts to record."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/medium-posted.json
+          git commit -m "chore: record Medium drafts posted by scheduled run"
+          git push
