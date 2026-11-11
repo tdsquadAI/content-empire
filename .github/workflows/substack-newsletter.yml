@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
   create-newsletter-draft:
@@ -21,6 +20,9 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
+
+      - name: Validate newsletter article links
+        run: python -m unittest discover -s tests -p test_substack_newsletter.py
 
       - name: Create Substack newsletter draft
         env:
@@ -37,13 +39,16 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
-      - name: Create issue with newsletter draft (if Substack blocked)
+      - name: Report newsletter draft
         if: always()
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -f newsletter-draft.html ]; then
             TITLE=$(head -1 newsletter-draft.html | sed 's/<!-- Title: //' | sed 's/ -->//')
             echo "Newsletter draft ready: $TITLE"
-            echo "Download the 'newsletter-draft' artifact to get the HTML for manual Substack posting."
+            echo "Review the 'newsletter-draft' artifact when the upload step succeeds."
+            {
+              echo "## Newsletter draft / טיוטת ניוזלטר"
+              echo "A draft was generated; this workflow does not send the newsletter."
+              echo "נוצרה טיוטה; תהליך זה אינו שולח את הניוזלטר."
+            } >> "$GITHUB_STEP_SUMMARY"
           fi

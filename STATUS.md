@@ -1,5 +1,54 @@
 # Content Empire — Project Status
-Last updated: 2026-11-05
+Last updated: 2026-11-11
+
+## Ralph Watch — 2026-11-11
+
+- Checked both repositories: 25 open primary issues, 1 open organization issue,
+  and no open PRs. Both main branches and the clean checkout started at
+  `09e6eb0`. Latest Pages deployments succeeded; the homepage, `/posts/`,
+  and `/pages/about/` returned HTTP 200.
+- At the start of this watch, organization Netlify run `41977470319` failed
+  because `NETLIFY_AUTH_TOKEN` and `NETLIFY_SITE_ID` are missing. Primary
+  Netlify remains manually disabled; no ineffective rerun was requested.
+- November 9 Medium runs `42691180931` (primary) and `42692866672`
+  (organization) each created 0 Medium drafts and exported 10 HTML files.
+  Organization artifact `13708141346` expires November 23. Corresponding
+  primary and organization HTML files have identical hashes.
+- November 6 newsletter runs did not create a Substack draft: organization
+  run `42285736025` lacked both Substack settings, and primary run
+  `42285973121` received HTTP 403. Their artifacts `13536329335` and
+  `13537152495` expire November 20.
+- Those saved newsletter drafts point every article link at a homepage. The
+  newsletter template still contains a literal `{{unsubscribe_url}}`
+  placeholder and English-only text. Do not send any drafts as-is: verify the
+  provider's unsubscribe handling and add Hebrew content during manual review.
+- Fixed the newsletter generator to select only articles with built site pages
+  and link to their individual URLs; it fails explicitly if none are available.
+  All five current article URLs returned HTTP 200. Added four focused tests and
+  a workflow validation step, plus a summary clarifying that the workflow does
+  not send newsletters. The tests and workflow lint pass locally.
+- Preserved and verified both sets of 10 Medium HTML files and both newsletter
+  HTML drafts in this watch session's local persistent `files/` directory,
+  under `medium-2026-11-09-org/`, `medium-2026-11-09-primary/`,
+  `newsletter-2026-11-06-org/`, and `newsletter-2026-11-06-primary/`.
+  These are local drafts, not publications or cross-machine backups.
+- Organization admin and primary push/triage access remain available. No
+  credentials were changed, no external content was published, and no blocked
+  issue was closed. Follow-up remains organization issue
+  `content-empire-pub/content-empire#1` and primary issues #18, #30, and #46.
+
+עברית: נבדקו שני המאגרים: 25 משימות פתוחות במאגר הראשי, אחת בארגון וללא
+בקשות משיכה פתוחות. האתר זמין ופריסות Pages הצליחו. Netlify בארגון חסום
+בגלל שני סודות חסרים; במאגר הראשי התהליך מושבת.
+ריצות Medium מ-9 בנובמבר ייצאו עשר טיוטות בכל מאגר ללא יצירת טיוטה ב-Medium.
+ריצות הניוזלטר מ-6 בנובמבר חסומות בהגדרות חסרות בארגון ובשגיאת 403 במאגר
+הראשי. שתי קבוצות טיוטות Medium ושתי טיוטות הניוזלטר נשמרו ואומתו מקומית.
+בטיוטות הניוזלטר הישנות כל קישורי המאמרים מפנים לדף הבית. תבנית הניוזלטר
+עדיין מכילה מציין מקום להסרה ותוכן באנגלית בלבד; אין לשלוח טיוטות ללא בדיקת
+הסרה ותרגום לעברית.
+המחולל תוקן לקישור מאמרים בעלי עמוד קיים בלבד, וחמש הכתובות נבדקו בהצלחה.
+נוספו בדיקות והבהרה שהתהליך אינו שולח ניוזלטרים. לא שונו פרטי גישה, לא
+פורסם תוכן ולא נסגרו משימות חסומות.
 
 ## Ralph Watch — 2026-11-05
 

@@ -10,9 +10,10 @@ Env vars required:
     SUBSTACK_SESSION_COOKIE     - substack.sid cookie value (optional)
     SUBSTACK_PUBLICATION_URL    - e.g. https://contentempire.substack.com (optional)
 
-The script picks the 3–5 most-recently-modified articles and formats
-them into a digest, then POSTs a draft to Substack's unofficial API when
-credentials are available. Otherwise it exports the HTML for manual posting.
+The script picks up to five most-recently-modified articles that have a
+built site page and formats them into a digest, then POSTs a draft to
+Substack's unofficial API when credentials are available. Otherwise it
+exports the HTML for manual posting.
 """
 
 import argparse
@@ -32,9 +33,10 @@ for _stream in (sys.stdout, sys.stderr):
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 ARTICLES_DIR = REPO_ROOT / "medium-ready"
+PUBLISHED_POSTS_DIR = REPO_ROOT / "docs" / "posts"
 MAX_ARTICLES = 5
 MIN_ARTICLES = 3
-DEFAULT_PUBLICATION_URL = "https://content-empire-pub.github.io/content-empire/"
+SITE_BASE_URL = "https://content-empire-pub.github.io/content-empire/"
 
 
 # ---------------------------------------------------------------------------
@@ -84,14 +86,24 @@ def extract_summary(md_text: str, max_chars: int = 300) -> str:
     return ""
 
 
-def pick_articles(directory: Path, count: int) -> list[Path]:
-    """Return `count` most-recently-modified .md files."""
+def pick_articles(directory: Path, count: int) -> list[tuple[Path, str]]:
+    """Return the most-recently-modified articles with built site pages."""
     files = sorted(
         directory.glob("*.md"),
         key=lambda p: p.stat().st_mtime,
         reverse=True,
     )
-    return files[:count]
+    published = []
+    for path in files:
+        slug = re.sub(r"^\d+-", "", path.stem)
+        if not (PUBLISHED_POSTS_DIR / slug / "index.html").is_file():
+            print(f"  [SKIP] {path.name}: no matching built site page")
+            continue
+        url = urllib.parse.urljoin(
+            SITE_BASE_URL, f"posts/{urllib.parse.quote(slug)}/"
+        )
+        published.append((path, url))
+    return published[:count]
 
 
 # ---------------------------------------------------------------------------
@@ -105,13 +117,13 @@ ARTICLE_BLOCK = """\
 <hr />
 """
 
-def build_newsletter_html(articles: list[dict], pub_url: str) -> str:
+def build_newsletter_html(articles: list[dict]) -> str:
     week_str = datetime.now(timezone.utc).strftime("%B %d, %Y")
     blocks = "".join(
         ARTICLE_BLOCK.format(
             title=a["title"],
             summary=a["summary"],
-            url=a.get("url", pub_url),
+            url=a["url"],
         )
         for a in articles
     )
@@ -192,7 +204,7 @@ def main():
 
     cookie = os.environ.get("SUBSTACK_SESSION_COOKIE", "")
     configured_pub_url = os.environ.get("SUBSTACK_PUBLICATION_URL", "")
-    pub_url = configured_pub_url or DEFAULT_PUBLICATION_URL
+    pub_url = configured_pub_url or SITE_BASE_URL
     export_only = not cookie or not configured_pub_url
 
     if not args.dry_run and export_only:
@@ -206,21 +218,22 @@ def main():
 
     article_paths = pick_articles(ARTICLES_DIR, MAX_ARTICLES)
     if len(article_paths) < MIN_ARTICLES:
-        print(f"⚠  Only {len(article_paths)} article(s) available (minimum {MIN_ARTICLES}).")
+        print(f"⚠  Only {len(article_paths)} published article(s) available (minimum {MIN_ARTICLES}).")
         if not article_paths:
+            print("No built site posts available for newsletter links.", file=sys.stderr)
             sys.exit(1)
 
     articles = []
-    for p in article_paths:
+    for p, article_url in article_paths:
         md_text = p.read_text(encoding="utf-8")
         meta, md_text = parse_frontmatter(md_text)
         title = extract_title(md_text, meta, p.stem.replace("-", " ").title())
         summary = extract_summary(md_text)
-        articles.append({"title": title, "summary": summary, "url": pub_url})
+        articles.append({"title": title, "summary": summary, "url": article_url})
         print(f"  ✓ {p.name}: {title}")
 
     newsletter_title = build_newsletter_title()
-    newsletter_html = build_newsletter_html(articles, pub_url)
+    newsletter_html = build_newsletter_html(articles)
 
     print(f"\n📰 Newsletter: {newsletter_title}")
     print(f"   Articles  : {len(articles)}")
