@@ -32,9 +32,20 @@ Last updated: 2026-11-11
   under `medium-2026-11-09-org/`, `medium-2026-11-09-primary/`,
   `newsletter-2026-11-06-org/`, and `newsletter-2026-11-06-primary/`.
   These are local drafts, not publications or cross-machine backups.
+- At the start of this watch, all 26 open issues had gone at least three days
+  without an update. Watch comments change timestamps, not the underlying work.
+- Repaired a course CTA that pointed to a GitHub 404 in the Hugo template and
+  16 generated pages. Its corrected organization-repository destination returns
+  HTTP 200.
+- The live course landing page promises all seven modules for $9.99, but that
+  Gumroad listing describes early access to two of seven modules. A separate
+  $19.99 listing describes a seven-module course. Reconcile the availability
+  claims and stores before promotion; reachability does not verify a purchase.
+- SEO audit: all 10 article pages have descriptions but lack canonical and
+  Open Graph tags.
 - Organization admin and primary push/triage access remain available. No
-  credentials were changed, no external content was published, and no blocked
-  issue was closed. Follow-up remains organization issue
+  credentials were changed, no articles or newsletters were published, and no
+  blocked issue was closed. Follow-up remains organization issue
   `content-empire-pub/content-empire#1` and primary issues #18, #30, and #46.
 
 עברית: נבדקו שני המאגרים: 25 משימות פתוחות במאגר הראשי, אחת בארגון וללא
@@ -48,7 +59,12 @@ Last updated: 2026-11-11
 הסרה ותרגום לעברית.
 המחולל תוקן לקישור מאמרים בעלי עמוד קיים בלבד, וחמש הכתובות נבדקו בהצלחה.
 נוספו בדיקות והבהרה שהתהליך אינו שולח ניוזלטרים. לא שונו פרטי גישה, לא
-פורסם תוכן ולא נסגרו משימות חסומות.
+פורסמו מאמרים או ניוזלטרים ולא נסגרו משימות חסומות.
+בתחילת הבדיקה כל 26 המשימות הפתוחות היו ללא עדכון במשך שלושה ימים לפחות.
+תוקן קישור שבור לקורס בתבנית וב-16 עמודים. דף הנחיתה מבטיח שבעה מודולים
+במחיר 9.99 דולר, אך דף המוצר מציין גישה מוקדמת לשניים משבעה; יש ליישב
+את הסתירה ואת שתי החנויות לפני קידום. בעשרת המאמרים קיימות תגיות תיאור,
+אך חסרות תגיות canonical ו-Open Graph.
 
 ## Ralph Watch — 2026-11-05
 
